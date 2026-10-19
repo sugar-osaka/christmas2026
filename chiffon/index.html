@@ -5,517 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 本番公開時にこの1行を削除（検索エンジンに載せない設定） -->
 <meta name="robots" content="noindex">
-<title>Christmas Collection 2026 | sugar</title>
-<meta name="description" content="sugarのクリスマスケーキ2026。12/19〜25お受け取り、ひとつひとつ手で仕上げたご予約ケーキ全9種。">
-<!-- SNSでシェアされたときの表示（リポジトリ名を変えたらURLも変更） -->
-<meta property="og:title" content="Christmas Collection 2026 | sugar">
-<meta property="og:description" content="sugarのクリスマスケーキ2026。ご予約受付中です。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sugar-osaka.github.io/christmas2026/">
-<meta property="og:image" content="https://sugar-osaka.github.io/christmas2026/images/og.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<title>シフォンホール（アイシングクッキーセット）| sugar Christmas 2026</title>
+<meta name="description" content="ご自宅で飾って楽しむ、sugarのクリスマスシフォンホール。飾り付けのアイデアを動画でご紹介します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    body { margin: 0; background: #EDE6DC; -webkit-font-smoothing: antialiased; }
-  img { max-width: 100%; height: auto; }
-  a { color: #2E2620; } a:hover { color: #6B5E52; }
-  a:focus-visible { outline: 2px solid #8A3A30; outline-offset: 3px; }
-  /* 写真スワイプ */
-  .swipe-track::-webkit-scrollbar { display: none; }
-  .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
-  .swipe-btn.prev { left: 10px; } .swipe-btn.next { right: 10px; }
-  .vslide video { opacity: 0; transition: opacity .7s ease; }
-  .vslide video.ready { opacity: 1; }
-  .swipe-btn[disabled] { opacity: 0; pointer-events: none; }
-  @media (hover: hover) and (pointer: fine) { .swipe-btn { display: flex; } }
-  /* スマホ調整 */
-  @media (max-width: 640px) {
-    .nav-link { display: none; }
-    .footer-logo { width: 100% !important; }
-    table { font-size: 13px !important; }
-    header > div, section, footer > div, section > div { padding-left: 20px !important; padding-right: 20px !important; }
+  :root {
+    --ground: #EDE6DC; --paper: #F3EEE6; --ink: #2E2620; --sub: #4F443A; --muted: #6B5E52;
+    --rule: #CFC3B3; --accent: #8A3A30;
+    --en: "Cormorant Garamond", Georgia, serif;
+    --ja: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    --pad: clamp(20px, 4vw, 32px);
   }
-</style>
-<style id="motion">
-  /* ===== 動き：案A（ふわっと）＋ TOP写真のゆっくりズーム ===== */
+  *, *::before, *::after { box-sizing: border-box; }
   html, body { overflow-x: clip; }
-  section[id], footer[id] { scroll-margin-top: 80px; }
-  a[href], button { transition: color .3s, background-color .3s, border-color .3s, opacity .3s; }
-  a svg { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
-  a:hover svg { transform: translateX(6px); }
-  .site-head { position: sticky; top: 0; z-index: 30; background: rgba(237,230,220,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: box-shadow .3s; }
-  .site-head.scrolled { box-shadow: 0 6px 24px -18px rgba(46,38,32,.6); }
-  .nav-link { background: linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s ease; }
-  .nav-link:hover { background-size: 100% 1px; }
-  .hero-photo { overflow: hidden; }
-  .hero-photo img { animation: kenburns 10s cubic-bezier(.25,.6,.3,1) forwards; will-change: transform; }
-  @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.1) translate(-2%, -1.5%); } }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans); line-height: 1.9; letter-spacing: 0.02em; -webkit-font-smoothing: antialiased; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--pad); }
+
+  /* Header */
+  .head { position: sticky; top: 0; z-index: 10; background: rgba(237,230,220,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  .head .wrap { min-height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .head img { height: 30px; width: auto; }
+  .head p { margin: 0; font-family: var(--en); font-style: italic; font-size: 16px; color: var(--muted); }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 40px 72px; padding-block: clamp(40px, 7vw, 88px); }
+  .hero .text { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+  .hero .media { flex: 1 1 380px; min-width: 0; max-width: 520px; }
+  .kicker { margin: 0; font-family: var(--en); font-size: 16px; letter-spacing: 0.1em; color: var(--accent); }
+  h1 { margin: 0; font-family: var(--en); font-weight: 300; line-height: 1; }
+  h1 .l1 { display: block; font-style: italic; font-size: clamp(30px, 4.6vw, 60px); }
+  h1 .l2 { display: block; font-size: clamp(44px, 7.4vw, 104px); letter-spacing: 0.04em; }
+  .name { margin: 0; font-family: var(--ja); font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+  .lead { margin: 0; font-size: 15px; color: var(--sub); max-width: 32em; }
+  .frame { position: relative; aspect-ratio: 4 / 5; background: #DDD3C5 center / cover no-repeat; filter: saturate(0.9); overflow: hidden; }
+  .frame img, .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame video { opacity: 0; transition: opacity .7s ease; }
+  .frame video.ready { opacity: 1; }
+
+  /* Sections */
+  .band { background: var(--paper); border-block: 1px solid var(--rule); }
+  .section { padding-block: clamp(64px, 9vw, 104px); }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px; margin-bottom: clamp(32px, 5vw, 52px); padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .sec-head h2 { margin: 0; font-family: var(--en); font-weight: 300; font-size: clamp(36px, 5vw, 60px); line-height: 1; }
+  .sec-head h2 em { font-style: italic; }
+  .sec-head p { margin: 0; font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* Ideas */
+  .ideas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 40px 48px; }
+  .ideas > li { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  .num { font-family: var(--en); font-style: italic; font-size: 40px; line-height: 1; color: var(--accent); }
+  .ideas > li > h3 { margin: 0; font-family: var(--ja); font-weight: 500; font-size: 18px; }
+  .ideas > li > p { margin: 0; font-size: 14px; color: var(--sub); }
+  .hint { margin: 0; font-size: 14px; color: var(--accent); }
+  .band .gallery { margin-top: clamp(32px, 5vw, 48px); }
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  @media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+
+  /* Set contents */
+  .split { display: flex; flex-wrap: wrap; gap: 40px 72px; align-items: center; }
+  .split > * { flex: 1 1 340px; min-width: 0; }
+  .split .media { max-width: 520px; }
+  .h-ja { margin: 0 0 14px; font-family: var(--ja); font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+  .body { margin: 0; font-size: 15px; color: var(--sub); }
+  .prices { margin: 24px 0 0; padding-top: 12px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-size: 15px; }
+  .prices dt { color: var(--muted); }
+  .prices dt span { margin-left: 8px; font-size: 13px; }
+  .prices dd { margin: 0; }
+  .notes { margin: 20px 0 0; padding: 14px 18px; border: 1px solid var(--accent); list-style: none; color: var(--accent); font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .small { margin: 16px 0 0; font-size: 13px; color: var(--muted); }
+
+  .btn { display: inline-flex; align-items: center; gap: 14px; min-height: 56px; margin-top: 28px; padding: 0 36px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; letter-spacing: 0.12em; transition: background-color .3s; }
+  .btn:hover { background: var(--sub); }
+  .btn svg { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .btn:hover svg { transform: translateX(6px); }
+  @media (max-width: 640px) { .btn { width: 100%; justify-content: center; } }
+  /* Info */
+  .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 32px 48px; }
+  .info div { display: flex; flex-direction: column; gap: 6px; }
+  .info .label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .info .label b { font-family: var(--ja); font-weight: 500; font-size: 17px; letter-spacing: 0.08em; }
+  .info .label i { font-family: var(--en); font-size: 16px; color: var(--muted); }
+  .info .big { margin: 0; font-family: var(--en); font-weight: 500; font-size: clamp(23px, 2.6vw, 34px); line-height: 1.2; white-space: nowrap; }
+  .info .big span { font-size: 0.6em; }
+  .info p { margin: 0; font-size: 13px; color: var(--sub); }
+
+  /* Footer */
+  .foot { background: var(--ink); color: var(--ground); }
+  .foot .wrap { padding-block: 64px 40px; display: flex; flex-direction: column; gap: 32px; }
+  .foot img { width: clamp(200px, 30vw, 360px); }
+  .foot .addr { font-size: 13px; border-top: 1px solid #5A4D42; padding-top: 24px; }
+  .foot .copy { margin: 0; font-size: 11px; color: #BFB2A2; letter-spacing: 0.1em; }
+  @media (max-width: 640px) { .foot img { width: 100%; } }
+
+  /* Motion: ふわっと + 写真ズーム */
   .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
   .js .rv.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) {
-    .js .rv { opacity: 1; transform: none; transition: none; }
-    .hero-photo img { animation: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } }
 </style>
 </head>
 <body>
-<div style="overflow-x: clip; background: #EDE6DC; color: #2E2620; font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif; line-height: 1.9; letter-spacing: 0.02em">
 
-  <!-- Header -->
-  <header style="border-bottom: 1px solid #CFC3B3">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-      <a href="#top" aria-label="sugar トップへ" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none"><img src="images/logo-dark.png" alt="sugar" style="display: block; height: 34px; width: auto"></a>
-      <nav aria-label="ページ内メニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; letter-spacing: 0.08em">
-        <a href="#collection" class="nav-link" style="text-decoration: none">Collection</a>
-        <a href="#schedule" class="nav-link" style="text-decoration: none">Schedule</a>
-        <a href="#notes" class="nav-link" style="text-decoration: none">Notes</a>
-        <a href="#visit" class="nav-link" style="text-decoration: none">Visit</a>
-        <a href="#reserve" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; background: #2E2620; color: #F3EEE6; text-decoration: none; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; letter-spacing: 0.1em">予約する</a>
-      </nav>
+<header class="head">
+  <div class="wrap">
+    <img src="../images/logo-dark.png" alt="sugar">
+    <p>Christmas 2026</p>
+  </div>
+</header>
+
+<main>
+  <!-- ファーストビュー：飾り付け動画 -->
+  <section class="wrap hero">
+    <div class="text">
+      <p class="kicker rv">Decorate at home</p>
+      <h1 class="rv"><span class="l1">Your own</span><span class="l2">CHIFFON</span></h1>
+      <p class="name rv">シフォンホール<br><span style="font-size: 0.8em">（アイシングクッキーセット）</span></p>
+      <p class="lead rv">生クリームやフルーツ、sugarオリジナルアイシングクッキーを飾って、世界でひとつのクリスマスケーキを。<br>チョコをたらりとかけたり、そのままカットしてアイスクリームを添えたりして召し上がるのもおすすめです。</p>
+      <p class="hint rv">※ 生クリームとフルーツは別途ご用意ください</p>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="top" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 40px; display: flex; justify-content: center">
-    <div style="display: flex; align-items: flex-end; gap: 18px">
-      <h1 style="margin: 0; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 0.95">
-        <span style="display: block; font-style: italic; font-size: clamp(28px, 6vw, 84px)">The Christmas</span>
-        <span style="display: block; font-size: clamp(34px, 10.5vw, 150px); letter-spacing: 0.04em">COLLECTION</span>
-      </h1>
-      <p style="margin: 0 0 14px; writing-mode: vertical-rl; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px; color: #6B5E52; letter-spacing: 0.08em">sugar 2026</p>
-    </div>
-  </section>
-  <section style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
-    <img src="images/hero.jpg" alt="sugarのクリスマスケーキが並んだテーブル" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; filter: saturate(0.82) contrast(0.96)">
-  </section>
-  <section style="max-width: 1240px; margin: 0 auto; padding: 28px 32px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 24px 48px; font-size: 13px; color: #4F443A">
-    <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.5; color: #2E2620">A baker’s quiet winter.</p>
-    <p style="margin: 0">流行は移ろっても、<br>手でつくるお菓子の時間は変わらない。</p>
-    <p style="margin: 0">焼きたての香りと、木のテーブルのぬくもりを、そのままご家庭へ。ひとつひとつ手で仕上げた、今年のクリスマスケーキです。</p>
-  </section>
-
-  <!-- Key info -->
-  <section style="background: #F3EEE6; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; gap: 40px 48px">
-      <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">お受け取り期間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Pick-up dates</span></p>
-        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(28px, 2.9vw, 40px); line-height: 1.15; white-space: nowrap">12.19 <span style="font-size: 0.6em">Sat</span> — 12.25 <span style="font-size: 0.6em">Fri</span></p>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">お受け取りは7日間。ケーキによってお受け取りできる日が異なります。</p>
-      </div>
-      <div style="flex: 1.4 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">お受け取り時間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Pick-up time</span></p>
-        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(23px, 2.9vw, 40px); line-height: 1.15; white-space: nowrap">12:00 / 13:30 / 15:00 / 16:30</p>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">全日共通。ご予約時にお選びください。</p>
-      </div>
-      <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">ご予約期間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Reservation</span></p>
-        <dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 16px">
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">店頭ご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> —</dd>
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">オンラインご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.2 <span style="font-size: 0.6em">Mon</span> —</dd>
-        </dl>
+    <div class="media rv">
+      <div class="frame" style="background-image: url('../images/chiffon-2-poster.jpg')">
+        <video src="../images/chiffon-2.mp4" poster="../images/chiffon-2-poster.jpg" muted loop playsinline preload="auto" aria-label="シフォンホールを飾り付けている様子の動画"></video>
       </div>
     </div>
   </section>
 
-  <!-- Collection -->
-  <section id="collection" style="max-width: 1240px; margin: 0 auto; padding: 112px 32px 96px">
-    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 56px; border-bottom: 1px solid #CFC3B3; padding-bottom: 20px">
-      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">The</span> Collection</h2>
-      <p style="margin: 0; font-size: 13px; color: #6B5E52; letter-spacing: 0.1em">価格はすべて税込です</p>
+  <!-- 楽しみ方 -->
+  <section class="band">
+    <div class="wrap section">
+      <div class="sec-head rv">
+        <h2><em>How to</em> Enjoy</h2>
+        <p>楽しみ方のアイデア</p>
+      </div>
+      <ol class="ideas">
+        <li class="rv">
+          <span class="num">i.</span>
+          <h3>大切な人と、クリスマスの楽しい時間を</h3>
+          <p>家族や友だち、大切な人と「どのクッキーをどこに飾る？」とわいわい相談しながら。<br>できあがるまでの時間も、クリスマスの思い出のひとつに。</p>
+        </li>
+        <li class="rv" style="--d: .12s">
+          <span class="num">ii.</span>
+          <h3>生チョコをたらりとかけて</h3>
+          <p>板チョコ・生クリーム<br>（ミニ）各50g　/ （大）各100g</p>
+          <p>刻んだチョコを入れたボールに、温めた生クリームを注いで混ぜれば、とろーりなめらかな生チョコに。<br>たらりとかけて少し冷ましてお召し上がりください。</p>
+        </li>
+        <li class="rv" style="--d: .24s">
+          <span class="num">iii.</span>
+          <h3>カットして、アイスを添えて</h3>
+          <p>シンプルにそのままカットして、アイスクリームやフルーツを添えて。<br>クリスマスのご馳走でお腹いっぱいでも、ぺろっと食べられちゃう至福のデザート。</p>
+        </li>
+      </ol>
+      <p class="hint rv" style="margin-top: 40px">※ 生クリームとフルーツは別途ご用意ください</p>
+
+      <div class="gallery">
+        <div class="frame rv" style="background-image: url('../images/chiffon-4.jpg')"><img src="../images/chiffon-4.jpg" width="1000" height="1250" alt="飾り付けたシフォンホールの例" loading="lazy"></div>
+        <div class="frame rv" style="--d: .12s; background-image: url('../images/chiffon-3-poster.jpg')"><video src="../images/chiffon-3.mp4" poster="../images/chiffon-3-poster.jpg" muted loop playsinline preload="none" aria-label="シフォンホールの動画"></video></div>
+        <div class="frame rv" style="--d: .24s; background-image: url('../images/chiffon.jpg')"><img src="../images/chiffon.jpg" width="1000" height="1250" alt="シフォンホールと飾り付けオーナメントのセット" loading="lazy"></div>
+      </div>
+
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 72px 36px">
+  </section>
 
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <img loading="lazy" src="images/buche-de-noel.jpg" width="1000" height="1250" alt="ブッシュドノエル" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9)">
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Bûche de Noël</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">ブッシュドノエル</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">sugar風のブッシュドノエルです。ふわふわのチョコレートケーキで、切り株をイメージしました。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">約14cm<span style="margin-left: 8px; font-size: 12px">3-4名様</span></dt><dd style="margin: 0">¥5,743</dd>
+  <!-- セット内容・価格 -->
+  <section class="wrap section">
+    <div class="sec-head rv">
+      <h2>CHIFFON</h2>
+      <p>セット内容・価格</p>
+    </div>
+    <div class="split">
+      <div class="rv">
+        <h3 class="h-ja">シフォンホール<br><span style="font-size: 0.8em">（アイシングクッキーセット）</span></h3>
+        <p class="body">デコレーションなしのシフォンホールに、sugarオリジナルのアイシングクッキーなどの飾り付けオーナメントがセットになっています。</p>
+        <dl class="prices">
+          <dt>ミニ 4号（約12cm）<span>2-3名様</span></dt><dd>¥2,160</dd>
+          <dt>大 7号（約21cm）<span>8-12名様</span></dt><dd>¥4,320</dd>
         </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="いちごとピスタチオのフレジエの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/fraisier.jpg" width="1000" height="1250" alt="いちごとピスタチオのフレジエ（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/fraisier-2-poster.jpg') center / cover no-repeat"><video src="images/fraisier-2.mp4" poster="images/fraisier-2-poster.jpg" muted loop playsinline preload="none" aria-label="いちごとピスタチオのフレジエ（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Fraisier Pistache</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごとピスタチオのフレジエ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">今年のフレジエはリースの形に。ピスタチオとアーモンドの生地で、濃厚なピスタチオクリームと一緒にいちごをたっぷりサンドしています。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">4-5名様</span></dt><dd style="margin: 0">¥6,048</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆・ピスタチオ・アーモンド</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="シューホールの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/choux.jpg" width="1000" height="1250" alt="シューホール（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/choux-2-poster.jpg') center / cover no-repeat"><video src="images/choux-2.mp4" poster="images/choux-2-poster.jpg" muted loop playsinline preload="none" aria-label="シューホール（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Choux Couronne</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シューホール</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">中は生クリームとカスタードクリームがたっぷり。いちごを飾って、クリスマス仕様に仕上げました。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">4-5名様</span></dt><dd style="margin: 0">¥3,888</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="和栗とほうじ茶のタルトの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/hojicha-marron-tart.jpg" width="1000" height="1250" alt="和栗とほうじ茶のタルト（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/hojicha-marron-tart-2-poster.jpg') center / cover no-repeat"><video src="images/hojicha-marron-tart-2.mp4" poster="images/hojicha-marron-tart-2-poster.jpg" muted loop playsinline preload="none" aria-label="和栗とほうじ茶のタルト（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Marron &amp; Hojicha Tart</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">和栗とほうじ茶のタルト</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">[説明文]</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥5,400</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆・アーモンド・ヘーゼルナッツ</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="いちごのタルトの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/strawberry-tart.jpg" width="1000" height="1250" alt="いちごのタルト（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/strawberry-tart-2-poster.jpg') center / cover no-repeat"><video src="images/strawberry-tart-2.mp4" poster="images/strawberry-tart-2-poster.jpg" muted loop playsinline preload="none" aria-label="いちごのタルト（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 4号 12/19-25、<span style="color: #8A3A30">5・6号 12/23-25 のみ</span></p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Tart</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごのタルト</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">タルトの土台にもいちごをたっぷり焼き込み、最後までいちごを堪能していただけるタルトです。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥5,400</dd>
-          <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,804</dd>
-          <dt style="color: #6B5E52">6号（約18cm）<span style="margin-left: 8px; font-size: 12px">6-8名様</span></dt><dd style="margin: 0">¥8,153</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">※ 写真は4号サイズです</p>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆・アーモンド・ヘーゼルナッツ</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="いちごの生クリームの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/strawberry-shortcake.jpg" width="1000" height="1250" alt="いちごの生クリーム（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/strawberry-shortcake-2-poster.jpg') center / cover no-repeat"><video src="images/strawberry-shortcake-2.mp4" poster="images/strawberry-shortcake-2-poster.jpg" muted loop playsinline preload="none" aria-label="いちごの生クリーム（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Shortcake</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごの生クリーム</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">中にも飾りにもいちごがたっぷりの、クリスマスの定番ケーキです。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥4,860</dd>
-          <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,048</dd>
-          <dt style="color: #6B5E52">6号（約18cm）<span style="margin-left: 8px; font-size: 12px">6-8名様</span></dt><dd style="margin: 0">¥8,078</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">※ 写真は4号サイズです</p>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="濃厚ガトーショコラの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/gateau-chocolat.jpg" width="1000" height="1250" alt="濃厚ガトーショコラ（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/gateau-chocolat-2-poster.jpg') center / cover no-repeat"><video src="images/gateau-chocolat-2.mp4" poster="images/gateau-chocolat-2-poster.jpg" muted loop playsinline preload="none" aria-label="濃厚ガトーショコラ（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Gâteau au Chocolat</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">濃厚ガトーショコラ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">隠れ人気のガトーショコラの、クリスマスver.です。とてもとても濃厚です。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆・ヘーゼルナッツ・アーモンド</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="2" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="チーズケーキの写真と動画（2枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/cheesecake.jpg" width="1000" height="1250" alt="チーズケーキ（1/2）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/cheesecake-2-poster.jpg') center / cover no-repeat"><video src="images/cheesecake-2.mp4" poster="images/cheesecake-2-poster.jpg" muted loop playsinline preload="none" aria-label="チーズケーキ（2/2）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Cheesecake</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">チーズケーキ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">店頭に通年並ぶチーズケーキとはまた違う食感に仕上げた、濃厚チーズケーキです。</p>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵・大豆・アーモンド</p>
-      </article>
-
-      <article style="display: flex; flex-direction: column; gap: 12px">
-        <div class="swipe" data-count="4" style="position: relative">
-          <div class="swipe-track" tabindex="0" aria-label="シフォンホールの写真と動画（4枚・横にスワイプ）" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain">
-            <img loading="lazy" src="images/chiffon.jpg" width="1000" height="1250" alt="シフォンホール（1/4）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/chiffon-2-poster.jpg') center / cover no-repeat"><video src="images/chiffon-2.mp4" poster="images/chiffon-2-poster.jpg" muted loop playsinline preload="none" aria-label="シフォンホール（2/4）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-            <div class="vslide" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; position: relative; filter: saturate(0.9); background: #DDD3C5 url('images/chiffon-3-poster.jpg') center / cover no-repeat"><video src="images/chiffon-3.mp4" poster="images/chiffon-3-poster.jpg" muted loop playsinline preload="none" aria-label="シフォンホール（3/4）の動画" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video></div>
-            <img loading="lazy" src="images/chiffon-4.jpg" width="1000" height="1250" alt="シフォンホール（4/4）" style="flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9); scroll-snap-align: start; display: block">
-          </div>
-          <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 4</p>
-        </div>
-        <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Chiffon</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シフォンホール</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">デコレーションなしのシフォンに、アイシングクッキーなどの飾り付けオーナメントをセットに。ご自宅で自由に飾って楽しんでください。</p>
-        <ul style="margin: 0; padding: 0; list-style: none; font-size: 13px; color: #8A3A30; display: flex; flex-direction: column; gap: 2px">
-          <li>※ 生クリームは別途ご用意ください</li>
+        <ul class="notes">
+          <li>※ 生クリームとフルーツは別途ご用意ください</li>
           <li>※ アイシングクッキーの種類はお選びいただけません</li>
         </ul>
-        <a class="more-link" href="chiffon/index.html" style="align-self: flex-end; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13px; letter-spacing: 0.08em; text-decoration: none; border-bottom: 1px solid #2E2620">詳しく見る<svg aria-hidden="true" width="20" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
-        <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
-          <dt style="color: #6B5E52">ミニ 4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥2,160</dd>
-          <dt style="color: #6B5E52">大 7号（約21cm）<span style="margin-left: 8px; font-size: 12px">8-12名様</span></dt><dd style="margin: 0">¥4,320</dd>
-        </dl>
-        <p style="margin: 0; font-size: 12px; color: #6B5E52">【アレルギー】乳・小麦・卵</p>
-      </article>
-
-    </div>
-    <p style="margin: 64px 0 0; padding-top: 20px; border-top: 1px solid #CFC3B3; font-size: 13px; color: #4F443A; text-align: center">※ 写真はイメージです。入荷状況により、飾り付けが変更になる場合があります。</p>
-  </section>
-
-  <!-- Schedule matrix -->
-  <section id="schedule" style="background: #F3EEE6; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: flex-start">
-      <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 60px); line-height: 1"><span style="font-style: italic">Pick-up</span> Schedule</h2>
-        <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px; letter-spacing: 0.06em">お受け取りできる日</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">ケーキの種類とサイズによって、お受け取りできる日が異なります。12/19〜22は一部のケーキのみ、12/23〜25はすべてのケーキをご予約いただけます。</p>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">お受け取り時間はどの日も 12:00 / 13:30 / 15:00 / 16:30 からお選びいただけます。</p>
+        <p class="small">【アレルギー】乳・小麦・卵</p>
+        <p class="small">価格はすべて税込です。写真はイメージです。入荷状況により、オーナメントの内容が変更になる場合があります。</p>
+        <a class="btn" href="../index.html#reserve">ご予約方法<svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
       </div>
-      <div style="flex: 1.6 1 480px; min-width: 0; overflow-x: auto">
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px">
-          <thead>
-            <tr style="border-bottom: 1px solid #2E2620">
-              <th scope="col" style="text-align: left; font-weight: 500; padding: 10px 8px 10px 0">ケーキ</th>
-              <th scope="col" style="width: 84px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; font-weight: 500; padding: 10px 4px; white-space: nowrap">12/19-22</th>
-              <th scope="col" style="width: 84px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; font-weight: 500; padding: 10px 4px; white-space: nowrap">12/23-25</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">ブッシュドノエル</th><td style="text-align: center; color: #8C7F72">—</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">いちごとピスタチオのフレジエ 5号</th><td style="text-align: center; color: #8C7F72">—</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">シューホール 5号</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">和栗とほうじ茶のタルト 4号</th><td style="text-align: center; color: #8C7F72">—</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">いちごのタルト 4号</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">いちごのタルト 5号・6号</th><td style="text-align: center; color: #8C7F72">—</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">いちごの生クリーム 4号・5号・6号</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">濃厚ガトーショコラ 4号</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">チーズケーキ 4号</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-            <tr style="border-bottom: 1px solid #CFC3B3"><th scope="row" style="text-align: left; font-weight: 400; padding: 9px 8px 9px 0">シフォンホール ミニ・大</th><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td><td style="text-align: center; color: #8A3A30; font-weight: 500">予約可</td></tr>
-          </tbody>
-        </table>
-        <p style="margin: 12px 0 0; font-size: 12px; color: #6B5E52">— はその期間のご予約を承っていません。</p>
+      <div class="media rv" style="--d: .12s">
+        <div class="frame" style="background-image: url('../images/chiffon.jpg')"><img src="../images/chiffon.jpg" width="1000" height="1250" alt="シフォンホールと飾り付けオーナメントのセット" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- Day-of -->
-  <section style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 0">
-    <div style="padding: 56px 0; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3; display: flex; justify-content: center">
-      <div style="max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
-        <h2 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(19px, 2vw, 22px); letter-spacing: 0.06em">12/23〜25は、当日販売限定のケーキも。</h2>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">この3日間は、ブッシュドノエルの形をした当日販売限定のホールケーキや、カットケーキも店頭に並びます。ご予約なしでお買い求めいただけます。</p>
-        <p style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30">数に限りがあり、売り切れ次第販売終了となります。確実にお求めになりたい方は、ご予約ケーキをご利用ください。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reserve -->
-  <section id="reserve" style="max-width: 1240px; margin: 0 auto; padding: 112px 32px 96px">
-    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 48px; border-bottom: 1px solid #CFC3B3; padding-bottom: 20px">
-      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">How to</span> Reserve</h2>
-      <p style="margin: 0; font-size: 13px; color: #6B5E52; letter-spacing: 0.1em">ご予約方法</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 48px 64px">
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">Online</p>
-        <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">オンラインでご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/2(月)〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認します。</p>
-        <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #2E2620; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">オンライン予約ページへ<svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">In store</p>
-        <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">ご来店でのご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日)〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。受付の際、店頭でお並びいただく場合があります。</p>
-        <a href="https://sugar-osaka.github.io/sugar/ebie/" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 56px; padding: 0 36px; margin-top: 8px; border: 1px solid #2E2620; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">店舗情報を見る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Notes -->
-  <section id="notes" style="background: #F3EEE6; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px">
-      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 48px; border-bottom: 1px solid #CFC3B3; padding-bottom: 20px">
-        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">Before</span> you order</h2>
-        <p style="margin: 0; font-size: 13px; color: #6B5E52; letter-spacing: 0.1em">ご予約前にお読みください</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 48px 64px">
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3">ご予約について</h3>
-          <ul style="margin: 0; padding-left: 1.1em; font-size: 14px; color: #4F443A; display: flex; flex-direction: column; gap: 10px">
-            <li>お受け取り日時ごとにご予約数の上限があります。店頭とオンラインでは在庫数が異なる場合があります。</li>
-            <li>お受け取りの際に「ご予約番号（ご予約ID）」を確認します。ご予約確定メール、ご予約カードを保管してください。</li>
-            <li>ご来店でのご予約は、当日の混雑を避けるため全て事前決済です。ご予約期間内にお支払いが確認できない場合は、自動キャンセルとなります。</li>
-          </ul>
+  <!-- お受け取り -->
+  <section class="band">
+    <div class="wrap section">
+      <div class="info">
+        <div class="rv">
+          <p class="label"><b>お受け取り期間</b><i>Pick-up dates</i></p>
+          <p class="big">12.19 <span>Sat</span> — 12.25 <span>Fri</span></p>
+          <p>期間中どの日でもお受け取りいただけます。</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3">お受け取りについて</h3>
-          <ul style="margin: 0; padding-left: 1.1em; font-size: 14px; color: #4F443A; display: flex; flex-direction: column; gap: 10px">
-            <li>時間完全予約制です。ご予約時間から1時間以内にご来店ください（16:30のご予約のみ18:00まで）。</li>
-            <li>クリスマス期間は店頭が大変混み合います。ご予約時間の前後にご来店いただくと、お渡しまでお時間がかかる場合があります。</li>
-          </ul>
+        <div class="rv" style="--d: .12s">
+          <p class="label"><b>お受け取り時間</b><i>Pick-up time</i></p>
+          <p class="big">12:00 / 13:30 / 15:00 / 16:30</p>
+          <p>ご予約時にお選びください。</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3">変更・キャンセルについて</h3>
-          <ul style="margin: 0; padding-left: 1.1em; font-size: 14px; color: #4F443A; display: flex; flex-direction: column; gap: 10px">
-            <li>ご予約確定後の変更はお受けできません。</li>
-            <li>お客様のご都合によるキャンセルの場合、ご返金はいたしかねます。</li>
-            <li>入荷状況により、飾り付けが変更になる場合があります。</li>
-          </ul>
+        <div class="rv" style="--d: .24s">
+          <p class="label"><b>お受け取り場所</b><i>Shop</i></p>
+          <p class="big" style="white-space: normal">sugar ebie</p>
+          <p>〒553-0001 大阪府大阪市福島区海老江5-3-10 西本ビル1階</p>
         </div>
       </div>
-    </div>
+  </div>
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer id="visit" style="background: #2E2620; color: #EDE6DC">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px 40px; display: flex; flex-direction: column; gap: 56px">
-      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 28px"><img src="images/logo-light.png" class="footer-logo" alt="sugar" style="display: block; width: clamp(200px, 30vw, 360px); height: auto"></div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 28px 48px; font-size: 14px; border-top: 1px solid #5A4D42; padding-top: 28px">
-        <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; letter-spacing: 0.08em; color: #BFB2A2">Address</span><span>〒553-0001<br>大阪府大阪市福島区海老江5-3-10<br>西本ビル1階</span><a class="js-map" href="#visit" target="_blank" rel="noopener" style="color: #EDE6DC; font-size: 13px">Googleマップで見る</a></div>
-        <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; letter-spacing: 0.08em; color: #BFB2A2">Open</span><span>金〜火 12:00〜18:00<br>水・木 12:00〜16:30<br>不定休</span></div>
-        <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; letter-spacing: 0.08em; color: #BFB2A2">Link</span><a href="https://sugar-osaka.github.io/sugar/" target="_blank" rel="noopener" style="color: #EDE6DC">HP</a><a class="js-instagram" href="#visit" target="_blank" rel="noopener" style="color: #EDE6DC">Instagram</a></div>
-      </div>
-      <p style="margin: 0; font-size: 11px; color: #BFB2A2; letter-spacing: 0.1em">© 2026 sugar</p>
-    </div>
-  </footer>
-
-</div>
+<footer class="foot">
+  <div class="wrap">
+    <img src="../images/logo-light.png" alt="Cafe Sugar Ebie X'mas">
+    <p class="addr">sugar ebie　〒553-0001 大阪府大阪市福島区海老江5-3-10 西本ビル1階<br>金〜火 12:00〜18:00　水・木 12:00〜16:30　不定休</p>
+    <p class="copy">© 2026 sugar</p>
+  </div>
+</footer>
 
 <script>
-  /* ★ここの3つのURLを書き換えるだけで、ページ内のリンクに反映されます */
-  const RESERVE_URL   = "https://www.tablecheck.com/cafesugar-fukushima-event/reserve?menu_lists=6ad4feacdfd88759db73fa47";        // オンライン予約ページ
-  const INSTAGRAM_URL = "https://www.instagram.com/";          // Instagram
-  const MAP_URL       = "https://maps.google.com/?q=大阪府大阪市福島区海老江5-3-10"; // Googleマップ
-
-  document.querySelectorAll(".js-reserve").forEach(a => a.href = RESERVE_URL);
-  document.querySelectorAll(".js-instagram").forEach(a => a.href = INSTAGRAM_URL);
-  document.querySelectorAll(".js-map").forEach(a => a.href = MAP_URL);
-</script>
-<script>
-  /* 写真スワイプ：枚数表示の更新と、PC用の左右ボタン */
-  document.querySelectorAll(".swipe").forEach(function (box) {
-    const track = box.querySelector(".swipe-track");
-    const count = box.querySelector(".swipe-count");
-    const n = track.children.length;
-    const prev = document.createElement("button");
-    const next = document.createElement("button");
-    prev.className = "swipe-btn prev"; prev.type = "button"; prev.setAttribute("aria-label", "前の写真"); prev.textContent = "‹";
-    next.className = "swipe-btn next"; next.type = "button"; next.setAttribute("aria-label", "次の写真"); next.textContent = "›";
-    box.append(prev, next);
-    const index = () => Math.round(track.scrollLeft / track.clientWidth);
-    const go = (i) => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
-    let visible = false;
-    const update = () => {
-      const i = index();
-      count.textContent = (i + 1) + " / " + n; prev.disabled = i === 0; next.disabled = i === n - 1;
-      /* 動画は「表示中のスライド」かつ「画面内」のときだけ再生 */
-      [...track.children].forEach((el, k) => {
-        if (el.tagName !== "VIDEO") return;
-        if (k === i && visible) { el.play().catch(() => {}); } else { el.pause(); }
-      });
-    };
-    new IntersectionObserver((es) => { visible = es[0].isIntersecting; update(); }, { threshold: 0.4 }).observe(box);
-    prev.addEventListener("click", () => go(index() - 1));
-    next.addEventListener("click", () => go(index() + 1));
-    track.addEventListener("scroll", update, { passive: true });
-    track.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") go(index() + 1); if (e.key === "ArrowLeft") go(index() - 1); });
-    update();
-  });
-</script>
-<script>
-  /* 動画スライド：近づいたら先読み → 今のスライドで画面に見えていればフェードインして再生 → 離れたら止めて最初に戻す */
-  if ("IntersectionObserver" in window) {
-    document.querySelectorAll(".swipe").forEach(function (box) {
-      const vids = [...box.querySelectorAll("video")];
-      if (!vids.length) return;
-      const track = box.querySelector(".swipe-track");
-      let onScreen = false;
-      const current = new Set();
-      const sync = function () {
-        vids.forEach(function (v) {
-          if (onScreen && current.has(v)) { v.muted = true; if (v.paused) v.play().catch(function () {}); }
-          else if (!v.paused || v.classList.contains("ready")) { v.pause(); v.classList.remove("ready"); try { v.currentTime = 0; } catch (err) {} }
-        });
-      };
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          onScreen = e.isIntersecting;
-          if (onScreen && !box.dataset.loaded) { box.dataset.loaded = "1"; vids.forEach(function (v) { v.preload = "auto"; v.load(); }); }
-        });
-        sync();
-      }, { rootMargin: "300px 0px" }).observe(box);
-      const slideIO = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.intersectionRatio > 0.6) current.add(e.target); else current.delete(e.target); });
-        sync();
-      }, { root: track, threshold: [0, 0.6, 1] });
-      vids.forEach(function (v) {
-        v.addEventListener("playing", function () { v.classList.add("ready"); });
-        slideIO.observe(v);
-      });
-    });
-  }
-</script>
-<script>
-  /* 動き：スクロールでふわっと表示、ヘッダー追従、TOP写真ズーム */
+  /* ふわっと表示 */
   (function () {
-    const head = document.querySelector("body > div > header");
-    head.classList.add("site-head");
-    addEventListener("scroll", () => head.classList.toggle("scrolled", scrollY > 8), { passive: true });
-    document.querySelector("section:nth-of-type(2) img").parentElement.classList.add("hero-photo");
+    const els = [...document.querySelectorAll(".rv")];
     if (!("IntersectionObserver" in window)) return;
-    const sel = [
-      "#top h1 > span", "#top p", "section:nth-of-type(3) > *",
-      "section > div > div[style*='flex: 1'], section > div > div[style*='flex: 1.4']",
-      "h2", "section > div > p", "#collection article", "#collection > p", "table tbody tr",
-      "#reserve > div:nth-of-type(2) > div", "#notes div[style*='flex-direction: column; gap: 14px']",
-      "section[style*='padding: 96px 32px 0'] > div", "footer > div > *"
-    ];
-    const items = new Set();
-    sel.forEach(s => document.querySelectorAll(s).forEach(el => items.add(el)));
-    const stagger = (list, step) => list.forEach((el, i) => el.style.setProperty("--d", (i % 4) * step + "s"));
-    stagger([...document.querySelectorAll("#collection article")], .12);
-    stagger([...document.querySelectorAll("table tbody tr")], .05);
-    stagger([...document.querySelectorAll("#top h1 > span")], .18);
     document.documentElement.classList.add("js");
-    items.forEach(el => el.classList.add("rv"));
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
-    items.forEach(el => io.observe(el));
-    addEventListener("scroll", () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) items.forEach(el => el.classList.add("in")); }, { passive: true });
+    els.forEach(el => io.observe(el));
+    addEventListener("scroll", () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) els.forEach(el => el.classList.add("in")); }, { passive: true });
+  })();
+
+  /* 動画：見えている間だけフェードインして再生、外れたら止める */
+  (function () {
+    const vids = document.querySelectorAll(".frame video");
+    vids.forEach(v => v.addEventListener("playing", () => v.classList.add("ready")));
+    if (!("IntersectionObserver" in window)) { vids.forEach(v => { v.muted = true; v.play().catch(() => {}); }); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.preload !== "auto") { v.preload = "auto"; } v.muted = true; v.play().catch(() => {}); }
+      else { v.pause(); }
+    }), { threshold: 0.25 });
+    vids.forEach(v => io.observe(v));
   })();
 </script>
 </body>
