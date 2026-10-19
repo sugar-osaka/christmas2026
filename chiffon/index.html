@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 本番公開時にこの1行を削除（検索エンジンに載せない設定） -->
+<meta name="robots" content="noindex">
+<title>シフォンホール（アイシングクッキーセット）| sugar Christmas 2026</title>
+<meta name="description" content="ご自宅で飾って楽しむ、sugarのクリスマスシフォンホール。飾り付けのアイデアを動画でご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #EDE6DC; --paper: #F3EEE6; --ink: #2E2620; --sub: #4F443A; --muted: #6B5E52;
+    --rule: #CFC3B3; --accent: #8A3A30;
+    --en: "Cormorant Garamond", Georgia, serif;
+    --ja: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    --pad: clamp(20px, 4vw, 32px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { overflow-x: clip; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans); line-height: 1.9; letter-spacing: 0.02em; -webkit-font-smoothing: antialiased; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--pad); }
+
+  /* Header */
+  .head { position: sticky; top: 0; z-index: 10; background: rgba(237,230,220,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  .head .wrap { min-height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .head img { height: 30px; width: auto; }
+  .head p { margin: 0; font-family: var(--en); font-style: italic; font-size: 16px; color: var(--muted); }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 40px 72px; padding-block: clamp(40px, 7vw, 88px); }
+  .hero .text { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+  .hero .media { flex: 1 1 380px; min-width: 0; max-width: 520px; }
+  .kicker { margin: 0; font-family: var(--en); font-size: 16px; letter-spacing: 0.1em; color: var(--accent); }
+  h1 { margin: 0; font-family: var(--en); font-weight: 300; line-height: 1; }
+  h1 .l1 { display: block; font-style: italic; font-size: clamp(30px, 4.6vw, 60px); }
+  h1 .l2 { display: block; font-size: clamp(44px, 7.4vw, 104px); letter-spacing: 0.04em; }
+  .name { margin: 0; font-family: var(--ja); font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+  .lead { margin: 0; font-size: 15px; color: var(--sub); max-width: 32em; }
+  .frame { position: relative; aspect-ratio: 4 / 5; background: #DDD3C5 center / cover no-repeat; filter: saturate(0.9); overflow: hidden; }
+  .frame img, .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame video { opacity: 0; transition: opacity .7s ease; }
+  .frame video.ready { opacity: 1; }
+
+  /* Sections */
+  .band { background: var(--paper); border-block: 1px solid var(--rule); }
+  .section { padding-block: clamp(64px, 9vw, 104px); }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px; margin-bottom: clamp(32px, 5vw, 52px); padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .sec-head h2 { margin: 0; font-family: var(--en); font-weight: 300; font-size: clamp(36px, 5vw, 60px); line-height: 1; }
+  .sec-head h2 em { font-style: italic; }
+  .sec-head p { margin: 0; font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* Ideas */
+  .ideas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 40px 48px; }
+  .ideas > li { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  .num { font-family: var(--en); font-style: italic; font-size: 40px; line-height: 1; color: var(--accent); }
+  .ideas > li > h3 { margin: 0; font-family: var(--ja); font-weight: 500; font-size: 18px; }
+  .ideas > li > p { margin: 0; font-size: 14px; color: var(--sub); }
+  .hint { margin: 0; font-size: 14px; color: var(--accent); }
+  .band .gallery { margin-top: clamp(32px, 5vw, 48px); }
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  @media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+
+  /* Set contents */
+  .split { display: flex; flex-wrap: wrap; gap: 40px 72px; align-items: center; }
+  .split > * { flex: 1 1 340px; min-width: 0; }
+  .split .media { max-width: 520px; }
+  .h-ja { margin: 0 0 14px; font-family: var(--ja); font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+  .body { margin: 0; font-size: 15px; color: var(--sub); }
+  .prices { margin: 24px 0 0; padding-top: 12px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-size: 15px; }
+  .prices dt { color: var(--muted); }
+  .prices dt span { margin-left: 8px; font-size: 13px; }
+  .prices dd { margin: 0; }
+  .notes { margin: 20px 0 0; padding: 14px 18px; border: 1px solid var(--accent); list-style: none; color: var(--accent); font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .small { margin: 16px 0 0; font-size: 13px; color: var(--muted); }
+
+  .btn { display: inline-flex; align-items: center; gap: 14px; min-height: 56px; margin-top: 28px; padding: 0 36px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; letter-spacing: 0.12em; transition: background-color .3s; }
+  .btn:hover { background: var(--sub); }
+  .btn svg { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .btn:hover svg { transform: translateX(6px); }
+  @media (max-width: 640px) { .btn { width: 100%; justify-content: center; } }
+  /* Info */
+  .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 32px 48px; }
+  .info div { display: flex; flex-direction: column; gap: 6px; }
+  .info .label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .info .label b { font-family: var(--ja); font-weight: 500; font-size: 17px; letter-spacing: 0.08em; }
+  .info .label i { font-family: var(--en); font-size: 16px; color: var(--muted); }
+  .info .big { margin: 0; font-family: var(--en); font-weight: 500; font-size: clamp(23px, 2.6vw, 34px); line-height: 1.2; white-space: nowrap; }
+  .info .big span { font-size: 0.6em; }
+  .info p { margin: 0; font-size: 13px; color: var(--sub); }
+
+  /* Footer */
+  .foot { background: var(--ink); color: var(--ground); }
+  .foot .wrap { padding-block: 64px 40px; display: flex; flex-direction: column; gap: 32px; }
+  .foot img { width: clamp(200px, 30vw, 360px); }
+  .foot .addr { font-size: 13px; border-top: 1px solid #5A4D42; padding-top: 24px; }
+  .foot .copy { margin: 0; font-size: 11px; color: #BFB2A2; letter-spacing: 0.1em; }
+  @media (max-width: 640px) { .foot img { width: 100%; } }
+
+  /* Motion: ふわっと + 写真ズーム */
+  .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .js .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <img src="../images/logo-dark.png" alt="sugar">
+    <p>Christmas 2026</p>
+  </div>
+</header>
+
+<main>
+  <!-- ファーストビュー：飾り付け動画 -->
+  <section class="wrap hero">
+    <div class="text">
+      <p class="kicker rv">Decorate at home</p>
+      <h1 class="rv"><span class="l1">Your own</span><span class="l2">CHIFFON</span></h1>
+      <p class="name rv">シフォンホール<br><span style="font-size: 0.8em">（アイシングクッキーセット）</span></p>
+      <p class="lead rv">生クリームやフルーツ、sugarオリジナルアイシングクッキーを飾って、世界でひとつのクリスマスケーキを。<br>チョコをたらりとかけたり、そのままカットしてアイスクリームを添えたりして召し上がるのもおすすめです。</p>
+      <p class="hint rv">※ 生クリームとフルーツは別途ご用意ください</p>
+    </div>
+    <div class="media rv">
+      <div class="frame" style="background-image: url('../images/chiffon-2-poster.jpg')">
+        <video src="../images/chiffon-2.mp4" poster="../images/chiffon-2-poster.jpg" muted loop playsinline preload="auto" aria-label="シフォンホールを飾り付けている様子の動画"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 楽しみ方 -->
+  <section class="band">
+    <div class="wrap section">
+      <div class="sec-head rv">
+        <h2><em>How to</em> Enjoy</h2>
+        <p>楽しみ方のアイデア</p>
+      </div>
+      <ol class="ideas">
+        <li class="rv">
+          <span class="num">i.</span>
+          <h3>大切な人と、クリスマスの楽しい時間を</h3>
+          <p>家族や友だち、大切な人と「どのクッキーをどこに飾る？」とわいわい相談しながら。<br>できあがるまでの時間も、クリスマスの思い出のひとつに。</p>
+        </li>
+        <li class="rv" style="--d: .12s">
+          <span class="num">ii.</span>
+          <h3>生チョコをたらりとかけて</h3>
+          <p>板チョコ・生クリーム<br>（ミニ）各50g　/ （大）各100g</p>
+          <p>刻んだチョコを入れたボールに、温めた生クリームを注いで混ぜれば、とろーりなめらかな生チョコに。<br>たらりとかけて少し冷ましてお召し上がりください。</p>
+        </li>
+        <li class="rv" style="--d: .24s">
+          <span class="num">iii.</span>
+          <h3>カットして、アイスを添えて</h3>
+          <p>シンプルにそのままカットして、アイスクリームやフルーツを添えて。<br>クリスマスのご馳走でお腹いっぱいでも、ぺろっと食べられちゃう至福のデザート。</p>
+        </li>
+      </ol>
+      <p class="hint rv" style="margin-top: 40px">※ 生クリームとフルーツは別途ご用意ください</p>
+
+      <div class="gallery">
+        <div class="frame rv" style="background-image: url('../images/chiffon-4.jpg')"><img src="../images/chiffon-4.jpg" width="1000" height="1250" alt="飾り付けたシフォンホールの例" loading="lazy"></div>
+        <div class="frame rv" style="--d: .12s; background-image: url('../images/chiffon-3-poster.jpg')"><video src="../images/chiffon-3.mp4" poster="../images/chiffon-3-poster.jpg" muted loop playsinline preload="none" aria-label="シフォンホールの動画"></video></div>
+        <div class="frame rv" style="--d: .24s; background-image: url('../images/chiffon.jpg')"><img src="../images/chiffon.jpg" width="1000" height="1250" alt="シフォンホールと飾り付けオーナメントのセット" loading="lazy"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- セット内容・価格 -->
+  <section class="wrap section">
+    <div class="sec-head rv">
+      <h2>CHIFFON</h2>
+      <p>セット内容・価格</p>
+    </div>
+    <div class="split">
+      <div class="rv">
+        <h3 class="h-ja">シフォンホール<br><span style="font-size: 0.8em">（アイシングクッキーセット）</span></h3>
+        <p class="body">デコレーションなしのシフォンホールに、sugarオリジナルのアイシングクッキーなどの飾り付けオーナメントがセットになっています。</p>
+        <dl class="prices">
+          <dt>ミニ 4号（約12cm）<span>2-3名様</span></dt><dd>¥2,160</dd>
+          <dt>大 7号（約21cm）<span>8-12名様</span></dt><dd>¥4,320</dd>
+        </dl>
+        <ul class="notes">
+          <li>※ 生クリームとフルーツは別途ご用意ください</li>
+          <li>※ アイシングクッキーの種類はお選びいただけません</li>
+        </ul>
+        <p class="small">【アレルギー】乳・小麦・卵</p>
+        <p class="small">価格はすべて税込です。写真はイメージです。入荷状況により、オーナメントの内容が変更になる場合があります。</p>
+        <a class="btn" href="../index.html#reserve">ご予約方法<svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+      </div>
+      <div class="media rv" style="--d: .12s">
+        <div class="frame" style="background-image: url('../images/chiffon.jpg')"><img src="../images/chiffon.jpg" width="1000" height="1250" alt="シフォンホールと飾り付けオーナメントのセット" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お受け取り -->
+  <section class="band">
+    <div class="wrap section">
+      <div class="info">
+        <div class="rv">
+          <p class="label"><b>お受け取り期間</b><i>Pick-up dates</i></p>
+          <p class="big">12.19 <span>Sat</span> — 12.25 <span>Fri</span></p>
+          <p>期間中どの日でもお受け取りいただけます。</p>
+        </div>
+        <div class="rv" style="--d: .12s">
+          <p class="label"><b>お受け取り時間</b><i>Pick-up time</i></p>
+          <p class="big">12:00 / 13:30 / 15:00 / 16:30</p>
+          <p>ご予約時にお選びください。</p>
+        </div>
+        <div class="rv" style="--d: .24s">
+          <p class="label"><b>お受け取り場所</b><i>Shop</i></p>
+          <p class="big" style="white-space: normal">sugar ebie</p>
+          <p>〒553-0001 大阪府大阪市福島区海老江5-3-10 西本ビル1階</p>
+        </div>
+      </div>
+  </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="../images/logo-light.png" alt="Cafe Sugar Ebie X'mas">
+    <p class="addr">sugar ebie　〒553-0001 大阪府大阪市福島区海老江5-3-10 西本ビル1階<br>金〜火 12:00〜18:00　水・木 12:00〜16:30　不定休</p>
+    <p class="copy">© 2026 sugar</p>
+  </div>
+</footer>
+
+<script>
+  /* ふわっと表示 */
+  (function () {
+    const els = [...document.querySelectorAll(".rv")];
+    if (!("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("js");
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    els.forEach(el => io.observe(el));
+    addEventListener("scroll", () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) els.forEach(el => el.classList.add("in")); }, { passive: true });
+  })();
+
+  /* 動画：見えている間だけフェードインして再生、外れたら止める */
+  (function () {
+    const vids = document.querySelectorAll(".frame video");
+    vids.forEach(v => v.addEventListener("playing", () => v.classList.add("ready")));
+    if (!("IntersectionObserver" in window)) { vids.forEach(v => { v.muted = true; v.play().catch(() => {}); }); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.preload !== "auto") { v.preload = "auto"; } v.muted = true; v.play().catch(() => {}); }
+      else { v.pause(); }
+    }), { threshold: 0.25 });
+    vids.forEach(v => io.observe(v));
+  })();
+</script>
+</body>
+</html>
