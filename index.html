@@ -27,6 +27,7 @@
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; background: #EDE6DC; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; height: auto; }
+  br.sp-br { display: none; }  /* スマホだけ改行 */
   a { color: #2E2620; } a:hover { color: #6B5E52; }
   a:focus-visible { outline: 2px solid #8A3A30; outline-offset: 3px; }
   /* 写真スワイプ */
@@ -41,7 +42,8 @@
   @media (max-width: 640px) {
     .nav-link { display: none; }
     .footer-logo { width: 100% !important; }
-    .ib { display: inline-block; }  /* スマホだけ、言葉の区切りで改行する */
+    .ib { display: inline-block; }
+    br.sp-br { display: inline; }  /* スマホだけ、言葉の区切りで改行する */
     .dayof-note { padding: 12px 14px !important; }
   }
   @media (max-width: 374px) {
@@ -184,7 +186,7 @@
   <!-- Collection -->
   <section id="collection" style="max-width: 1240px; margin: 0 auto; padding: 112px 32px 96px">
     <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 56px; border-bottom: 1px solid #CFC3B3; padding-bottom: 20px">
-      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">The</span> Collection</h2>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">Christmas</span> Cake</h2>
       <p style="margin: 0; font-size: 13px; color: #6B5E52; letter-spacing: 0.1em">価格はすべて税込です</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 72px 36px">
@@ -395,7 +397,7 @@
     <div style="padding: 56px 0; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3; display: flex; justify-content: center">
       <div style="max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
         <h2 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(19px, 2vw, 22px); letter-spacing: 0.06em"><span class="ib">12/23〜25は、</span><span class="ib">当日販売限定のケーキも。</span></h2>
-        <p style="margin: 0; font-size: 14px; color: #4F443A"><span class="ib">この3日間は、</span><span class="ib">ブッシュドノエルの形をした</span><span class="ib">当日販売限定のホールケーキや、</span><span class="ib">カットケーキも店頭に並びます。</span><span class="ib">ご予約なしで</span><span class="ib">お買い求めいただけます。</span></p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A"><span class="ib">この3日間は、</span><span class="ib">ブッシュドノエルの形をした</span><span class="ib">当日販売限定のホールケーキや、</span><span class="ib">カットケーキも店頭に並びます。</span><br class="sp-br"><span class="ib">ご予約なしでお買い求めいただけます。</span></p>
         <p class="dayof-note" style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30"><span class="ib">数に限りがあり、</span><span class="ib">売り切れ次第</span><span class="ib">販売終了となります。</span><span class="ib">確実にお求めになりたい方は、</span><span class="ib">ご予約ケーキを</span><span class="ib">ご利用ください。</span></p>
       </div>
     </div>
