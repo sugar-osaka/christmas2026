@@ -41,6 +41,13 @@
   @media (max-width: 640px) {
     .nav-link { display: none; }
     .footer-logo { width: 100% !important; }
+    .ib { display: inline-block; }  /* スマホだけ、言葉の区切りで改行する */
+    .dayof-note { padding: 12px 14px !important; }
+  }
+  @media (max-width: 374px) {
+    p[lang="fr"] { font-size: 16px !important; }  /* TOPのキャプションを2行に収める */
+    section[style*='padding: 96px 32px 0'] h2 { font-size: 17px !important; letter-spacing: 0.04em !important; }
+    section[style*='padding: 96px 32px 0'] p { font-size: 13px !important; }
     table { font-size: 13px !important; }
     header > div, section, footer > div, section > div { padding-left: 20px !important; padding-right: 20px !important; }
   }
@@ -123,7 +130,7 @@
     <img src="images/hero.jpg" alt="sugarのクリスマスケーキが並んだテーブル" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; filter: saturate(0.82) contrast(0.96)">
   </section>
   <section style="max-width: 1240px; margin: 0 auto; padding: 28px 32px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 24px 48px; font-size: 13px; color: #4F443A">
-    <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.5; color: #2E2620">Un petit peu de bonheur.<br>Pour que Noël ait le goût du bonheur.</p>
+    <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.5; color: #2E2620" lang="fr">Un petit peu de bonheur.<br>Pour que Noël ait le goût du bonheur.</p>
   </section>
 
   <!-- Key info -->
@@ -387,9 +394,9 @@
   <section style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 0">
     <div style="padding: 56px 0; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3; display: flex; justify-content: center">
       <div style="max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
-        <h2 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(19px, 2vw, 22px); letter-spacing: 0.06em">12/23〜25は、当日販売限定のケーキも。</h2>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">この3日間は、ブッシュドノエルの形をした当日販売限定のホールケーキや、カットケーキも店頭に並びます。ご予約なしでお買い求めいただけます。</p>
-        <p style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30">数に限りがあり、売り切れ次第販売終了となります。確実にお求めになりたい方は、ご予約ケーキをご利用ください。</p>
+        <h2 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(19px, 2vw, 22px); letter-spacing: 0.06em"><span class="ib">12/23〜25は、</span><span class="ib">当日販売限定のケーキも。</span></h2>
+        <p style="margin: 0; font-size: 14px; color: #4F443A"><span class="ib">この3日間は、</span><span class="ib">ブッシュドノエルの形をした</span><span class="ib">当日販売限定のホールケーキや、</span><span class="ib">カットケーキも店頭に並びます。</span><span class="ib">ご予約なしで</span><span class="ib">お買い求めいただけます。</span></p>
+        <p class="dayof-note" style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30"><span class="ib">数に限りがあり、</span><span class="ib">売り切れ次第</span><span class="ib">販売終了となります。</span><span class="ib">確実にお求めになりたい方は、</span><span class="ib">ご予約ケーキを</span><span class="ib">ご利用ください。</span></p>
       </div>
     </div>
   </section>
