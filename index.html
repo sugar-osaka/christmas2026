@@ -62,6 +62,31 @@
     .hero-photo img { animation: none; }
   }
 </style>
+<style id="confirm-modal">
+  /* 注意事項の確認ポップアップ */
+  .cm { width: min(720px, calc(100% - 32px)); max-height: min(86vh, 900px); padding: 0; border: 0; background: #F3EEE6; color: #2E2620; box-shadow: 0 30px 80px -30px rgba(0,0,0,.55); overflow: hidden; font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif; line-height: 1.8; letter-spacing: 0.02em; }
+  .cm[open] { display: flex; flex-direction: column; animation: cm-in .35s cubic-bezier(.2,.7,.2,1); }
+  .cm::backdrop { background: rgba(46,38,32,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+  @keyframes cm-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .cm-head { padding: 24px 28px 16px; border-bottom: 1px solid #CFC3B3; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .cm-head h2 { margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+  .cm-close { border: 0; background: none; font-size: 26px; line-height: 1; width: 44px; height: 44px; margin: -10px -12px -10px 0; cursor: pointer; color: #4F443A; }
+  .cm-body { padding: 8px 28px 8px; overflow-y: auto; overscroll-behavior: contain; }
+  .cm-body > div { padding: 18px 0; border-bottom: 1px solid #CFC3B3; }
+  .cm-body > div:last-child { border-bottom: 0; }
+  .cm-body h3 { margin: 0 0 8px !important; padding: 0 !important; border: 0 !important; font-size: 16px !important; }
+  .cm-body ul { font-size: 13px !important; gap: 6px !important; }
+  .cm-foot { padding: 16px 28px 22px; border-top: 1px solid #CFC3B3; display: flex; flex-direction: column; gap: 14px; background: #F3EEE6; }
+  .cm-check { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; min-height: 44px; }
+  .cm-check input { width: 20px; height: 20px; accent-color: #2E2620; margin: 0; }
+  .cm-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+  .cm-actions button { min-height: 52px; padding: 0 28px; font: inherit; font-size: 14px; letter-spacing: 0.1em; cursor: pointer; border: 1px solid #2E2620; }
+  .cm-cancel { background: transparent; color: #2E2620; }
+  .cm-go { background: #2E2620; color: #F3EEE6; display: inline-flex; align-items: center; gap: 12px; }
+  .cm-go:disabled { opacity: .35; cursor: not-allowed; }
+  @media (max-width: 640px) { .cm-head, .cm-body, .cm-foot { padding-left: 20px; padding-right: 20px; } .cm-actions button { flex: 1 1 100%; justify-content: center; } .cm-go { order: -1; } }
+  @media (prefers-reduced-motion: reduce) { .cm[open] { animation: none; } }
+</style>
 </head>
 <body>
 <div style="overflow-x: clip; background: #EDE6DC; color: #2E2620; font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif; line-height: 1.9; letter-spacing: 0.02em">
@@ -516,6 +541,69 @@
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
     items.forEach(el => io.observe(el));
     addEventListener("scroll", () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) items.forEach(el => el.classList.add("in")); }, { passive: true });
+  })();
+</script>
+<dialog class="cm" id="confirm-modal-dialog" aria-labelledby="cm-title">
+  <div class="cm-head">
+    <h2 id="cm-title">ご予約前にご確認ください</h2>
+    <button type="button" class="cm-close" aria-label="閉じる">×</button>
+  </div>
+  <div class="cm-body"></div>
+  <div class="cm-foot">
+    <label class="cm-check"><input type="checkbox"> 注意事項を確認しました</label>
+    <div class="cm-actions">
+      <button type="button" class="cm-cancel">戻る</button>
+      <button type="button" class="cm-go" disabled><span>進む</span><svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></button>
+    </div>
+  </div>
+</dialog>
+<script>
+  /* 予約ページ・店舗情報へ進む前に、注意事項をポップアップで確認 */
+  (function () {
+    const dlg = document.getElementById("confirm-modal-dialog");
+    if (!dlg || typeof dlg.showModal !== "function") return; // 古いブラウザはそのままリンク先へ
+    const body = dlg.querySelector(".cm-body");
+    const check = dlg.querySelector(".cm-check input");
+    const go = dlg.querySelector(".cm-go");
+    const goLabel = go.querySelector("span");
+    /* 「ご予約前にお読みください」の3項目をそのまま複製して表示 */
+    document.querySelectorAll("#notes div[style*='flex-direction: column; gap: 14px']").forEach(function (col) {
+      const c = col.cloneNode(true);
+      c.classList.remove("rv", "in"); c.removeAttribute("style");
+      body.appendChild(c);
+    });
+    let target = null;
+    /* 確認済みの記録（同じ日に一度確認したら、その日はポップアップを出さない） */
+    const KEY = "sugarXmas2026NotesConfirmed";
+    const today = function () { const d = new Date(); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); };
+    const confirmedToday = function () { try { return localStorage.getItem(KEY) === today(); } catch (err) { return false; } };
+    const remember = function () { try { localStorage.setItem(KEY, today()); } catch (err) {} };
+    const targets = [
+      { el: document.querySelector("a.js-reserve"), label: "オンライン予約ページへ進む" },
+      { el: document.querySelector("#reserve a[href*='sugar/ebie']"), label: "店舗情報へ進む" }
+    ];
+    targets.forEach(function (t) {
+      if (!t.el) return;
+      t.el.addEventListener("click", function (e) {
+        if (confirmedToday()) return; // 今日すでに確認済みなら、そのままリンク先へ
+        e.preventDefault();
+        target = t.el;
+        goLabel.textContent = t.label;
+        check.checked = false; go.disabled = true;
+        body.scrollTop = 0;
+        dlg.showModal();
+      });
+    });
+    check.addEventListener("change", function () { go.disabled = !check.checked; });
+    go.addEventListener("click", function () {
+      if (!target) return;
+      remember();
+      window.open(target.href, "_blank", "noopener");
+      dlg.close();
+    });
+    dlg.querySelector(".cm-cancel").addEventListener("click", function () { dlg.close(); });
+    dlg.querySelector(".cm-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); }); // 背景クリックで閉じる
   })();
 </script>
 </body>
