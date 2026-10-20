@@ -41,6 +41,7 @@
   /* スマホ調整 */
   @media (max-width: 640px) {
     .nav-link { display: none; }
+    .head-logo-img { height: 46px !important; }
     .footer-logo { width: 100% !important; }
     .ib { display: inline-block; }
     br.sp-br { display: inline; }  /* スマホだけ、言葉の区切りで改行する */
@@ -57,7 +58,7 @@
 <style id="motion">
   /* ===== 動き：案A（ふわっと）＋ TOP写真のゆっくりズーム ===== */
   html, body { overflow-x: clip; }
-  section[id], footer[id] { scroll-margin-top: 80px; }
+  section[id], footer[id] { scroll-margin-top: 96px; }
   a[href], button { transition: color .3s, background-color .3s, border-color .3s, opacity .3s; }
   a svg { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
   a:hover svg { transform: translateX(6px); }
@@ -107,7 +108,7 @@
   <!-- Header -->
   <header style="border-bottom: 1px solid #CFC3B3">
     <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-      <a href="#top" aria-label="sugar トップへ" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none"><img src="images/logo-dark.png" alt="sugar" style="display: block; height: 34px; width: auto"></a>
+      <a href="#top" aria-label="sugar トップへ" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none"><img class="head-logo-img" src="images/logo-dark.png" alt="Cafe Sugar Ebie X'mas" style="display: block; height: 56px; width: auto"></a>
       <nav aria-label="ページ内メニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; letter-spacing: 0.08em">
         <a href="#collection" class="nav-link" style="text-decoration: none">Collection</a>
         <a href="#schedule" class="nav-link" style="text-decoration: none">Schedule</a>
@@ -473,7 +474,7 @@
       <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">sugar -four sec-</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px; letter-spacing: 0.06em; line-height: 1.6">クリスマス限定セットを、<br>冷凍便でご自宅へ。</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A; line-height: 1.9">sugarのオンラインショップです。<br>クリスマス限定セットを、配送でお届けします。</p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A; line-height: 1.9">sugarのオンラインショップです。クリスマス限定セットを、配送でお届けします。</p>
         <p style="margin: 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30">オンラインショップでは、上記のクリスマスケーキ（ご予約ケーキ）の販売はしておりません。商品はすべて配送でのお届けとなり、店頭でのお受け取りはできません。</p>
         <dl style="margin: 0; display: flex; flex-direction: column; gap: 14px">
           <div style="padding-top: 12px; border-top: 1px solid #CFC3B3; display: flex; flex-direction: column; gap: 4px">
