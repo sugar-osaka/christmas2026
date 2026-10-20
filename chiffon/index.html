@@ -32,8 +32,10 @@
 
   /* Header */
   .head { position: sticky; top: 0; z-index: 10; background: rgba(237,230,220,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
-  .head .wrap { min-height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .head img { height: 30px; width: auto; }
+  .head .wrap { min-height: 80px; display: flex; align-items: center; justify-content: space-between; }
+  .head img { height: 56px; width: auto; display: block; }
+  @media (max-width: 640px) { .head img { height: 46px; } }
+  .head-logo { display: flex; align-items: center; }
   .head p { margin: 0; font-family: var(--en); font-style: italic; font-size: 16px; color: var(--muted); }
 
   /* Hero */
@@ -117,7 +119,7 @@
 
 <header class="head">
   <div class="wrap">
-    <img src="../images/logo-dark.png" alt="sugar">
+    <a class="head-logo" href="../index.html" aria-label="sugar クリスマスケーキ一覧へ戻る"><img src="../images/logo-dark.png" alt="Cafe Sugar Ebie X'mas"></a>
     <p>Christmas 2026</p>
   </div>
 </header>
