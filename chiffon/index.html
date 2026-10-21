@@ -64,7 +64,7 @@
   /* Ideas */
   .ideas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 40px 48px; }
   .ideas > li { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid var(--rule); }
-  .num { font-family: var(--en); font-style: italic; font-size: 40px; line-height: 1; color: var(--accent); }
+  .num { display: flex; align-items: baseline; gap: 10px; font-family: var(--en); font-size: 40px; line-height: 1; color: var(--accent); font-variant-numeric: lining-nums; letter-spacing: 0.04em; }
   .ideas > li > h3 { margin: 0; font-family: var(--ja); font-weight: 500; font-size: 18px; }
   .ideas > li > p { margin: 0; font-size: 14px; color: var(--sub); }
   .hint { margin: 0; font-size: 14px; color: var(--accent); }
@@ -145,23 +145,23 @@
   <section class="band">
     <div class="wrap section">
       <div class="sec-head rv">
-        <h2><em>How to</em> Enjoy</h2>
+        <h2><em>Ideas</em> for Christmas</h2>
         <p>楽しみ方のアイデア</p>
       </div>
       <ol class="ideas">
         <li class="rv">
-          <span class="num">i.</span>
+          <span class="num">01</span>
           <h3>大切な人と、クリスマスの楽しい時間を</h3>
           <p>家族や友だち、大切な人と「どのクッキーをどこに飾る？」とわいわい相談しながら。<br>できあがるまでの時間も、クリスマスの思い出のひとつに。</p>
         </li>
         <li class="rv" style="--d: .12s">
-          <span class="num">ii.</span>
+          <span class="num">02</span>
           <h3>生チョコをたらりとかけて</h3>
           <p>板チョコ・生クリーム<br>（ミニ）各50g　/ （大）各100g</p>
           <p>刻んだチョコを入れたボールに、温めた生クリームを注いで混ぜれば、とろーりなめらかな生チョコに。<br>たらりとかけて少し冷ましてお召し上がりください。</p>
         </li>
         <li class="rv" style="--d: .24s">
-          <span class="num">iii.</span>
+          <span class="num">03</span>
           <h3>カットして、アイスを添えて</h3>
           <p>シンプルにそのままカットして、アイスクリームやフルーツを添えて。<br>クリスマスのご馳走でお腹いっぱいでも、ぺろっと食べられちゃう至福のデザート。</p>
         </li>
