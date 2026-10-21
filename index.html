@@ -58,14 +58,6 @@
   .swipe-ind .hint { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; letter-spacing: 0.06em; color: #6B5E52; }
   @media (hover: hover) and (pointer: fine) { .swipe-ind { display: none; } }
   @media (hover: none), (pointer: coarse) { .swipe .swipe-count { display: none; } }
-  /* スマホ用：写真の右下が一度だけそっと捲れて、めくれることを知らせる */
-  .curl { position: absolute; right: 0; width: 0; height: 0; pointer-events: none; z-index: 2; transform: translateY(-100%);
-          background: linear-gradient(to top left, #EDE6DC 0 50%, transparent 50%); }
-  .curl::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom right, #FBF8F3 0%, #E9E1D5 46%, #D9CEBF 50%, transparent 50%);
-          filter: drop-shadow(-2px -2px 3px rgba(46,38,32,0.18)); }
-  .curl.play { animation: curl-peek 1.8s cubic-bezier(.45,.05,.25,1) forwards; }
-  @keyframes curl-peek { 0% { width: 0; height: 0; } 40%, 55% { width: var(--curl, 34px); height: var(--curl, 34px); } 100% { width: 0; height: 0; } }
-  @media (prefers-reduced-motion: reduce) { .curl { display: none; } }
   /* スマホ調整 */
   @media (max-width: 640px) {
     .nav-link { display: none; }
@@ -593,20 +585,6 @@
       hint = document.createElement("span"); hint.className = "hint";
       ind.append(b, hint);
       track.after(ind);
-      /* スマホだけ：最初に画面に入ったとき、写真の右下を一度だけそっと捲る */
-      if (window.matchMedia("(hover: none), (pointer: coarse)").matches && "IntersectionObserver" in window) {
-        const curl = document.createElement("span");
-        curl.className = "curl"; curl.setAttribute("aria-hidden", "true");
-        box.appendChild(curl);
-        const place = () => { curl.style.top = (track.offsetTop + track.clientHeight) + "px"; curl.style.setProperty("--curl", Math.round(Math.min(40, Math.max(28, track.clientWidth * 0.1))) + "px"); };
-        const io = new IntersectionObserver((es) => {
-          if (!es[0].isIntersecting) return;
-          io.disconnect();
-          setTimeout(() => { if (index() === 0) { place(); curl.classList.add("play"); } }, 700);
-        }, { threshold: 0.7 });
-        io.observe(track);
-        curl.addEventListener("animationend", () => curl.remove());
-      }
     }
     const ARROW = '<svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg>';
     const index = () => Math.round(track.scrollLeft / track.clientWidth);
