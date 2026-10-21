@@ -31,6 +31,10 @@
   .js-reserve.is-before-open { background: #DDD3C5 !important; color: #4F443A !important; cursor: default; padding: 0 24px !important; white-space: nowrap; }  /* 受付開始前の予約ボタン */
   a { color: #2E2620; } a:hover { color: #6B5E52; }
   a:focus-visible { outline: 2px solid #8A3A30; outline-offset: 3px; }
+  /* 商品名：日本語を上、英語・フランス語を下 */
+  .ct { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+  .ct-ja { font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(15px, calc((100vw - 80px) / 15), 20px); line-height: 1.4; letter-spacing: 0.02em; }  /* 一番長い「いちごとピスタチオのフレジエ」も1行に収まる大きさ */
+  .ct-en { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.2; letter-spacing: 0.03em; color: #6B5E52; }
   /* 写真スワイプ */
   .swipe-track::-webkit-scrollbar { display: none; }
   .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
@@ -200,7 +204,7 @@
       <article style="display: flex; flex-direction: column; gap: 12px">
         <img loading="lazy" src="images/buche-de-noel.jpg" width="1000" height="1250" alt="ブッシュドノエル" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.9)">
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Bûche de Noël</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">ブッシュドノエル</span></h3>
+        <h3 class="ct"><span class="ct-ja">ブッシュドノエル</span><span class="ct-en">Bûche de Noël</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">sugar風のブッシュドノエルです。ふわふわのチョコレートケーキで、切り株をイメージしました。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">約14cm<span style="margin-left: 8px; font-size: 12px">3-4名様</span></dt><dd style="margin: 0">¥5,743</dd>
@@ -217,7 +221,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Fraisier Pistache</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごとピスタチオのフレジエ</span></h3>
+        <h3 class="ct"><span class="ct-ja">いちごとピスタチオのフレジエ</span><span class="ct-en">Fraisier Pistache</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">今年のフレジエはリースの形に。生地にもクリームにも、ピスタチオを贅沢に使用し、いちごをたっぷりサンドしています。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,048</dd>
@@ -234,7 +238,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Paris-Brest</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シューホール</span></h3>
+        <h3 class="ct"><span class="ct-ja">シューホール</span><span class="ct-en">Paris-Brest</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">自家製いちごジャムとカスタードクリーム、生クリームをたっぷりサンドした、リース型のシュー。アイシングクッキーとカラフルなメレンゲは別添えでお渡しとなりますので、仕上げのデコレーションも楽しんでいただけると嬉しいです。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥3,888</dd>
@@ -251,7 +255,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Marron &amp; Hojicha Tart</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">栗とほうじ茶のタルト</span></h3>
+        <h3 class="ct"><span class="ct-ja">栗とほうじ茶のタルト</span><span class="ct-en">Marron &amp; Hojicha Tart</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">渋皮栗をたっぷり焼き込んだほうじ茶のダマンドとさくさくのタルト生地。生クリームと、フランス産モンブランクリームで少し大人なケーキに仕上げました。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥5,400</dd>
@@ -268,7 +272,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 4号 12/19-25、<span style="color: #8A3A30">5・6号 12/23-25 のみ</span></p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Tart</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごのタルト</span></h3>
+        <h3 class="ct"><span class="ct-ja">いちごのタルト</span><span class="ct-en">Strawberry Tart</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">タルトの土台にもいちごをたっぷり焼き込み、最後までいちごを堪能していただけるタルトです。たっぷりいちごを食べたい方におすすめ。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥5,400</dd>
@@ -288,7 +292,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Cream</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごの生クリーム</span></h3>
+        <h3 class="ct"><span class="ct-ja">いちごの生クリーム</span><span class="ct-en">Strawberry Cream</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">中にもいちごをサンドした、クリスマスの定番ケーキです。今年はsugarオリジナルアイシングクッキーで飾り付けしました。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥4,860</dd>
@@ -308,7 +312,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Gâteau au Chocolat</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">濃厚ガトーショコラ</span></h3>
+        <h3 class="ct"><span class="ct-ja">濃厚ガトーショコラ</span><span class="ct-en">Gâteau au Chocolat</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">隠れ人気のグルテンフリーガトーショコラ。生チョコのように濃密で、なめらかな仕上がり。（飾りのクッキーのみ小麦を使用しています）</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
@@ -325,7 +329,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Cheesecake</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">チーズケーキ</span></h3>
+        <h3 class="ct"><span class="ct-ja">チーズケーキ</span><span class="ct-en">Cheesecake</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">店頭に通年並ぶチーズケーキとはまた違う食感に仕上げた、グルテンフリーの濃厚チーズケーキです。（飾りのクッキーのみ小麦を使用しています）</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
@@ -344,7 +348,7 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 4</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Chiffon</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シフォンホール</span></h3>
+        <h3 class="ct"><span class="ct-ja">シフォンホール</span><span class="ct-en">Chiffon</span></h3>
         <p style="margin: 0; font-size: 13px; color: #4F443A">デコレーションなしのシフォンケーキに、アイシングクッキーなどの飾り付けオーナメントをセットに。ご自宅で自由に飾って楽しんでください。</p>
         <ul style="margin: 0; padding: 0; list-style: none; font-size: 13px; color: #8A3A30; display: flex; flex-direction: column; gap: 2px">
           <li>※ 生クリームとフルーツは別途ご用意ください</li>
