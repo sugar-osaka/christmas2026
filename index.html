@@ -33,13 +33,15 @@
   .ct { margin: 0; display: flex; flex-direction: column; gap: 4px; }
   .ct-ja { font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(15px, calc((100vw - 80px) / 15), 20px); line-height: 1.4; letter-spacing: 0.02em; }  /* 一番長い「いちごとピスタチオのフレジエ」も1行に収まる大きさ */
   .ct-en { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.2; letter-spacing: 0.03em; color: #6B5E52; }
-  /* シフォンの「詳しく見る」ボタン：深緑＋矢印がゆっくり右へ動いて誘う */
-  .more-link { align-self: flex-end; display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 24px; background: #143319; color: #F3EEE6 !important; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; transition: background .3s ease; }
-  .more-link svg { animation: more-nudge 2.4s ease-in-out infinite; }
-  .more-link:hover { background: #24472B; }
-  .more-link:hover svg { animation-duration: 1.2s; }
-  @keyframes more-nudge { 0%, 55%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 85% { transform: translateX(0); } }
-  @media (prefers-reduced-motion: reduce) { .more-link svg { animation: none; } }
+  /* シフォンの「詳しく見る」ボタン：深緑の枠線が時計回りに描かれる */
+  .more-link { position: relative; align-self: flex-end; display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 18px; background: transparent; color: #143319 !important; text-decoration: none; font-size: 12px; letter-spacing: 0.1em; transition: background .3s ease; }
+  .more-link:hover { background: rgba(20,51,25,0.06); }
+  .more-arrow { width: 18px; height: 9px; }
+  .more-frame { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .more-frame rect { fill: none; stroke: #143319; stroke-width: 0.8; stroke-dasharray: var(--len, 400px); stroke-dashoffset: var(--len, 400px); }
+  .more-link.is-drawn .more-frame rect { animation: more-draw 1.4s ease-in-out forwards; }  /* 画面に入ったら1回だけ時計回りに描く */
+  @keyframes more-draw { from { stroke-dashoffset: var(--len, 400px); } to { stroke-dashoffset: 0px; } }
+  @media (prefers-reduced-motion: reduce) { .more-frame rect, .more-link.is-drawn .more-frame rect { animation: none; stroke-dashoffset: 0px; } }
   /* 写真スワイプ */
   .swipe-track::-webkit-scrollbar { display: none; }
   .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
@@ -169,7 +171,7 @@
       </div>
       <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
         <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">ご予約期間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Reservation</span></p>
-        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(28px, 2.9vw, 40px); line-height: 1.15"><span style="display: inline-block; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> —</span> <span style="display: inline-block; white-space: nowrap">11.30 <span style="font-size: 0.6em">Mon</span></span></p>
+        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(28px, 2.9vw, 40px); line-height: 1.15"><span style="display: inline-block; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> —</span> <span style="display: inline-block; white-space: nowrap">12.5 <span style="font-size: 0.6em">Sat</span></span></p>
         <p style="margin: 0; font-size: 13px; color: #4F443A">店頭・オンライン共通</p>
       </div>
     </div>
@@ -357,7 +359,7 @@
           <li>※ 生クリームとフルーツは別途ご用意ください</li>
           <li>※ アイシングクッキーの種類はお選びいただけません</li>
         </ul>
-        <a class="more-link" href="chiffon/index.html">詳しく見る<svg aria-hidden="true" width="20" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+        <a class="more-link" href="chiffon/index.html"><svg class="more-frame" aria-hidden="true"><rect x="0.5" y="0.5" width="0" height="0"/></svg>詳しく見る<svg class="more-arrow" aria-hidden="true" width="20" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">ミニ 4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥2,160</dd>
           <dt style="color: #6B5E52">大 7号（約21cm）<span style="margin-left: 8px; font-size: 12px">8-12名様</span></dt><dd style="margin: 0">¥4,320</dd>
@@ -538,6 +540,30 @@
   document.querySelectorAll(".js-map").forEach(a => a.href = MAP_URL);
 </script>
 <script>
+  /* 「詳しく見る」の枠線アニメーション用に、ボタンの周の長さを計算 */
+  (function () {
+    const set = function () {
+      document.querySelectorAll(".more-link").forEach(function (a) {
+        const w = a.offsetWidth - 1, h = a.offsetHeight - 1, r = a.querySelector(".more-frame rect");
+        if (r) { r.setAttribute("width", w); r.setAttribute("height", h); }
+        a.style.setProperty("--len", 2 * (w + h) + "px"); a.style.setProperty("--nlen", -2 * (w + h) + "px");
+      });
+    };
+    set(); window.addEventListener("resize", set);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+    /* 画面に入ったら1回だけ描く。PCでマウスを重ねたときは描き直す */
+    const links = document.querySelectorAll(".more-link");
+    const draw = function (a) { a.classList.remove("is-drawn"); void a.offsetWidth; a.classList.add("is-drawn"); };
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { draw(e.target); io.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      links.forEach(function (a) { io.observe(a); });
+    } else { links.forEach(draw); }
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      links.forEach(function (a) { a.addEventListener("mouseenter", function () { draw(a); }); });
+    }
+  })();
   /* 写真スワイプ：枚数表示の更新と、PC用の左右ボタン */
   document.querySelectorAll(".swipe").forEach(function (box) {
     const track = box.querySelector(".swipe-track");
