@@ -39,6 +39,14 @@
   .vslide video.ready { opacity: 1; }
   .swipe-btn[disabled] { opacity: 0; pointer-events: none; }
   @media (hover: hover) and (pointer: fine) { .swipe-btn { display: flex; } }
+  /* スマホ用：写真の下の細い線と「Swipe →」で、横にめくれることを知らせる */
+  .swipe-ind { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+  .swipe-ind .bars { flex: 1; display: flex; gap: 4px; }
+  .swipe-ind .bars i { flex: 1; height: 2px; background: #CFC3B3; transition: background .3s ease; }
+  .swipe-ind .bars i.on { background: #2E2620; }
+  .swipe-ind .hint { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; letter-spacing: 0.06em; color: #6B5E52; }
+  @media (hover: hover) and (pointer: fine) { .swipe-ind { display: none; } }
+  @media (hover: none), (pointer: coarse) { .swipe .swipe-count { display: none; } }
   /* スマホ調整 */
   @media (max-width: 640px) {
     .nav-link { display: none; }
@@ -569,12 +577,26 @@
     prev.className = "swipe-btn prev"; prev.type = "button"; prev.setAttribute("aria-label", "前の写真"); prev.textContent = "‹";
     next.className = "swipe-btn next"; next.type = "button"; next.setAttribute("aria-label", "次の写真"); next.textContent = "›";
     box.append(prev, next);
+    /* スマホ用のスワイプ表示（2枚以上のとき） */
+    let bars = [], hint = null;
+    if (n > 1) {
+      const ind = document.createElement("div");
+      ind.className = "swipe-ind"; ind.setAttribute("aria-hidden", "true");
+      const b = document.createElement("span"); b.className = "bars";
+      for (let k = 0; k < n; k++) { const t = document.createElement("i"); b.appendChild(t); bars.push(t); }
+      hint = document.createElement("span"); hint.className = "hint";
+      ind.append(b, hint);
+      track.after(ind);
+    }
+    const ARROW = '<svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg>';
     const index = () => Math.round(track.scrollLeft / track.clientWidth);
     const go = (i) => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
     let visible = false;
     const update = () => {
       const i = index();
       count.textContent = (i + 1) + " / " + n; prev.disabled = i === 0; next.disabled = i === n - 1;
+      bars.forEach((t, k) => t.classList.toggle("on", k === i));
+      if (hint) hint.innerHTML = i === 0 ? "Swipe" + ARROW : (i + 1) + " / " + n;
       /* 動画は「表示中のスライド」かつ「画面内」のときだけ再生 */
       [...track.children].forEach((el, k) => {
         if (el.tagName !== "VIDEO") return;
