@@ -42,6 +42,12 @@
   .more-link.is-drawn .more-frame rect { animation: more-draw 1.4s ease-in-out forwards; }  /* 画面に入ったら1回だけ時計回りに描く */
   @keyframes more-draw { from { stroke-dashoffset: var(--len, 400px); } to { stroke-dashoffset: 0px; } }
   @media (prefers-reduced-motion: reduce) { .more-frame rect, .more-link.is-drawn .more-frame rect { animation: none; stroke-dashoffset: 0px; } }
+  /* 商品写真：画面に入ると、ろうそくが灯るように本来の色へ */
+  #collection .swipe-track > img, #collection .swipe-track > .vslide { filter: saturate(0.5) brightness(0.93) !important; transition: filter 1.8s ease; }
+  #collection .swipe.is-lit .swipe-track > img, #collection .swipe.is-lit .swipe-track > .vslide { filter: saturate(0.9) brightness(1) !important; }
+  @media (prefers-reduced-motion: reduce) {
+    #collection .swipe-track > img, #collection .swipe-track > .vslide { filter: saturate(0.9) !important; transition: none; }
+  }
   /* 写真スワイプ */
   .swipe-track::-webkit-scrollbar { display: none; }
   .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
@@ -563,6 +569,17 @@
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       links.forEach(function (a) { a.addEventListener("mouseenter", function () { draw(a); }); });
     }
+  })();
+  /* 商品写真に明かりを灯す（画面に入ったとき1回だけ） */
+  (function () {
+    const targets = [...document.querySelectorAll("#collection .swipe")].map(el => [el, "is-lit", 0.35]);
+    if (!("IntersectionObserver" in window)) { targets.forEach(t => t[0].classList.add(t[1])); return; }
+    targets.forEach(function (t) {
+      const io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add(t[1]); io.unobserve(e.target); } });
+      }, { threshold: t[2] });
+      io.observe(t[0]);
+    });
   })();
   /* 写真スワイプ：枚数表示の更新と、PC用の左右ボタン */
   document.querySelectorAll(".swipe").forEach(function (box) {
