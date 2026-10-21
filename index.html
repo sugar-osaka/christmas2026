@@ -28,6 +28,7 @@
     body { margin: 0; background: #EDE6DC; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; height: auto; }
   br.sp-br { display: none; }  /* スマホだけ改行 */
+  .js-reserve.is-before-open { background: #DDD3C5 !important; color: #4F443A !important; cursor: default; padding: 0 24px !important; white-space: nowrap; }  /* 受付開始前の予約ボタン */
   a { color: #2E2620; } a:hover { color: #6B5E52; }
   a:focus-visible { outline: 2px solid #8A3A30; outline-offset: 3px; }
   /* 写真スワイプ */
@@ -43,8 +44,8 @@
     .nav-link { display: none; }
     .head-logo-img { height: 46px !important; }
     .footer-logo { width: 100% !important; }
-    .ib { display: inline-block; }
-    br.sp-br { display: inline; }  /* スマホだけ、言葉の区切りで改行する */
+    .ib { display: inline-block; }  /* スマホだけ、言葉の区切りで改行する */
+    br.sp-br { display: inline; }
     .dayof-note { padding: 12px 14px !important; }
   }
   @media (max-width: 374px) {
@@ -151,11 +152,9 @@
       </div>
       <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
         <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">ご予約期間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Reservation</span></p>
-        <dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 16px">
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">店頭ご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> —</dd>
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">オンラインご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.2 <span style="font-size: 0.6em">Mon</span> —</dd>
+        <dl style="margin: 0; display: grid; grid-template-columns: 1fr; gap: 2px">
+          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">店頭・オンライン共通</dt>
+          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> <span style="font-size: 0.8em">12:00</span> —</dd>
         </dl>
       </div>
     </div>
@@ -414,13 +413,13 @@
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">Online</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">オンラインでご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/2(月)〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
-        <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #143319; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">オンライン予約ページへ<svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
+        <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #143319; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em"><span class="js-reserve-label">オンライン予約ページへ</span><svg class="js-reserve-arrow" aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">In store</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">ご来店でのご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日)〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
         <a href="https://sugar-osaka.github.io/sugar/ebie/" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 56px; padding: 0 36px; margin-top: 8px; border: 1px solid #143319; color: #143319; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">店舗情報を見る</a>
       </div>
     </div>
@@ -521,6 +520,42 @@
   const MAP_URL       = "https://maps.google.com/?q=大阪府大阪市福島区海老江5-3-10"; // Googleマップ
 
   document.querySelectorAll(".js-reserve").forEach(a => a.href = RESERVE_URL);
+
+  /* オンライン予約の受付開始（日本時間）。この時刻までは予約ボタンを押せないようにする */
+  const RESERVE_OPEN_AT = Date.parse("2026-11-01T12:00:00+09:00");
+  (function () {
+    const btns = document.querySelectorAll(".js-reserve");
+    const isOpen = function () { return Date.now() >= RESERVE_OPEN_AT; };
+    const apply = function () {
+      const open = isOpen();
+      btns.forEach(function (a) {
+        const label = a.querySelector(".js-reserve-label");
+        const arrow = a.querySelector(".js-reserve-arrow");
+        if (open) {
+          a.href = RESERVE_URL; a.setAttribute("target", "_blank");
+          a.removeAttribute("aria-disabled"); a.classList.remove("is-before-open");
+          if (label) label.textContent = "オンライン予約ページへ";
+          if (arrow) arrow.style.display = "";
+        } else {
+          a.removeAttribute("href"); a.removeAttribute("target");
+          a.setAttribute("aria-disabled", "true"); a.classList.add("is-before-open");
+          if (label) label.textContent = "11/1(日) 12:00 受付開始";
+          if (arrow) arrow.style.display = "none";
+        }
+      });
+      return open;
+    };
+    btns.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (!isOpen()) { e.preventDefault(); e.stopImmediatePropagation(); }
+      });
+    });
+    if (!apply()) {
+      const wait = RESERVE_OPEN_AT - Date.now();
+      if (wait < 2147483647) setTimeout(apply, wait + 500);       // ページを開いたまま12時を迎えたら自動で切り替え
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) apply(); });
+    }
+  })();
   document.querySelectorAll(".js-instagram").forEach(a => a.href = INSTAGRAM_URL);
   document.querySelectorAll(".js-base").forEach(a => { if (BASE_URL) a.href = BASE_URL; else { a.href = "#online"; a.removeAttribute("target"); } });
   document.querySelectorAll(".js-map").forEach(a => a.href = MAP_URL);
