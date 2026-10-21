@@ -42,12 +42,6 @@
   .more-link.is-drawn .more-frame rect { animation: more-draw 1.4s ease-in-out forwards; }  /* 画面に入ったら1回だけ時計回りに描く */
   @keyframes more-draw { from { stroke-dashoffset: var(--len, 400px); } to { stroke-dashoffset: 0px; } }
   @media (prefers-reduced-motion: reduce) { .more-frame rect, .more-link.is-drawn .more-frame rect { animation: none; stroke-dashoffset: 0px; } }
-  /* 商品写真：画面に入ると、ろうそくが灯るように本来の色へ */
-  #collection .swipe-track > img, #collection .swipe-track > .vslide { filter: saturate(0.5) brightness(0.93) !important; transition: filter 1.8s ease; }
-  #collection .swipe.is-lit .swipe-track > img, #collection .swipe.is-lit .swipe-track > .vslide { filter: saturate(0.9) brightness(1) !important; }
-  @media (prefers-reduced-motion: reduce) {
-    #collection .swipe-track > img, #collection .swipe-track > .vslide { filter: saturate(0.9) !important; transition: none; }
-  }
   /* 写真スワイプ */
   .swipe-track::-webkit-scrollbar { display: none; }
   .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
@@ -64,6 +58,14 @@
   .swipe-ind .hint { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; letter-spacing: 0.06em; color: #6B5E52; }
   @media (hover: hover) and (pointer: fine) { .swipe-ind { display: none; } }
   @media (hover: none), (pointer: coarse) { .swipe .swipe-count { display: none; } }
+  /* スマホ用：写真の右下が一度だけそっと捲れて、めくれることを知らせる */
+  .curl { position: absolute; right: 0; width: 0; height: 0; pointer-events: none; z-index: 2; transform: translateY(-100%);
+          background: linear-gradient(to top left, #EDE6DC 0 50%, transparent 50%); }
+  .curl::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom right, #FBF8F3 0%, #E9E1D5 46%, #D9CEBF 50%, transparent 50%);
+          filter: drop-shadow(-2px -2px 3px rgba(46,38,32,0.18)); }
+  .curl.play { animation: curl-peek 1.8s cubic-bezier(.45,.05,.25,1) forwards; }
+  @keyframes curl-peek { 0% { width: 0; height: 0; } 40%, 55% { width: var(--curl, 34px); height: var(--curl, 34px); } 100% { width: 0; height: 0; } }
+  @media (prefers-reduced-motion: reduce) { .curl { display: none; } }
   /* スマホ調整 */
   @media (max-width: 640px) {
     .nav-link { display: none; }
@@ -148,11 +150,12 @@
   <!-- Hero -->
   <section id="top" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 40px; display: flex; justify-content: center">
     <div style="display: flex; align-items: flex-end; gap: 18px">
-      <h1 style="margin: 0; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 0.95">
-        <span style="display: block; font-style: italic; font-size: clamp(28px, 6vw, 84px)">The Christmas</span>
-        <span style="display: block; font-size: clamp(34px, 10.5vw, 150px); letter-spacing: 0.04em">COLLECTION</span>
+      <h1 lang="fr" style="margin: 0; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 0.92">
+        <span style="display: block; font-style: italic; font-size: clamp(56px, 12vw, 160px); letter-spacing: -0.01em">Gâteaux</span>
+        <span style="display: block; font-size: clamp(34px, 6.6vw, 92px); letter-spacing: 0.02em"><span style="font-style: italic; font-size: 0.7em">de</span> Noël</span>
+        <span lang="en" style="display: block; margin-top: 18px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.4em; color: #6B5E52">CHRISTMAS CAKES&ensp;2026</span>
+        <span lang="en" style="display: block; margin-top: 10px; font-style: italic; font-size: 22px; letter-spacing: 0.06em; color: #6B5E52">sugar</span>
       </h1>
-      <p style="margin: 0 0 14px; writing-mode: vertical-rl; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px; color: #6B5E52; letter-spacing: 0.08em">sugar 2026</p>
     </div>
   </section>
   <section style="max-width: 1240px; margin: 0 auto; padding: 0 32px">
@@ -570,17 +573,6 @@
       links.forEach(function (a) { a.addEventListener("mouseenter", function () { draw(a); }); });
     }
   })();
-  /* 商品写真に明かりを灯す（画面に入ったとき1回だけ） */
-  (function () {
-    const targets = [...document.querySelectorAll("#collection .swipe")].map(el => [el, "is-lit", 0.35]);
-    if (!("IntersectionObserver" in window)) { targets.forEach(t => t[0].classList.add(t[1])); return; }
-    targets.forEach(function (t) {
-      const io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add(t[1]); io.unobserve(e.target); } });
-      }, { threshold: t[2] });
-      io.observe(t[0]);
-    });
-  })();
   /* 写真スワイプ：枚数表示の更新と、PC用の左右ボタン */
   document.querySelectorAll(".swipe").forEach(function (box) {
     const track = box.querySelector(".swipe-track");
@@ -601,6 +593,20 @@
       hint = document.createElement("span"); hint.className = "hint";
       ind.append(b, hint);
       track.after(ind);
+      /* スマホだけ：最初に画面に入ったとき、写真の右下を一度だけそっと捲る */
+      if (window.matchMedia("(hover: none), (pointer: coarse)").matches && "IntersectionObserver" in window) {
+        const curl = document.createElement("span");
+        curl.className = "curl"; curl.setAttribute("aria-hidden", "true");
+        box.appendChild(curl);
+        const place = () => { curl.style.top = (track.offsetTop + track.clientHeight) + "px"; curl.style.setProperty("--curl", Math.round(Math.min(40, Math.max(28, track.clientWidth * 0.1))) + "px"); };
+        const io = new IntersectionObserver((es) => {
+          if (!es[0].isIntersecting) return;
+          io.disconnect();
+          setTimeout(() => { if (index() === 0) { place(); curl.classList.add("play"); } }, 700);
+        }, { threshold: 0.7 });
+        io.observe(track);
+        curl.addEventListener("animationend", () => curl.remove());
+      }
     }
     const ARROW = '<svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg>';
     const index = () => Math.round(track.scrollLeft / track.clientWidth);
