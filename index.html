@@ -33,6 +33,13 @@
   .ct { margin: 0; display: flex; flex-direction: column; gap: 4px; }
   .ct-ja { font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(15px, calc((100vw - 80px) / 15), 20px); line-height: 1.4; letter-spacing: 0.02em; }  /* 一番長い「いちごとピスタチオのフレジエ」も1行に収まる大きさ */
   .ct-en { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.2; letter-spacing: 0.03em; color: #6B5E52; }
+  /* シフォンの「詳しく見る」ボタン：深緑＋矢印がゆっくり右へ動いて誘う */
+  .more-link { align-self: flex-end; display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 24px; background: #143319; color: #F3EEE6 !important; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; transition: background .3s ease; }
+  .more-link svg { animation: more-nudge 2.4s ease-in-out infinite; }
+  .more-link:hover { background: #24472B; }
+  .more-link:hover svg { animation-duration: 1.2s; }
+  @keyframes more-nudge { 0%, 55%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 85% { transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) { .more-link svg { animation: none; } }
   /* 写真スワイプ */
   .swipe-track::-webkit-scrollbar { display: none; }
   .swipe-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(243,238,230,0.85); color: #2E2620; font-size: 20px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; }
@@ -350,7 +357,7 @@
           <li>※ 生クリームとフルーツは別途ご用意ください</li>
           <li>※ アイシングクッキーの種類はお選びいただけません</li>
         </ul>
-        <a class="more-link" href="chiffon/index.html" style="align-self: flex-end; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13px; letter-spacing: 0.08em; text-decoration: none; border-bottom: 1px solid #2E2620">詳しく見る<svg aria-hidden="true" width="20" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+        <a class="more-link" href="chiffon/index.html">詳しく見る<svg aria-hidden="true" width="20" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">ミニ 4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥2,160</dd>
           <dt style="color: #6B5E52">大 7号（約21cm）<span style="margin-left: 8px; font-size: 12px">8-12名様</span></dt><dd style="margin: 0">¥4,320</dd>
