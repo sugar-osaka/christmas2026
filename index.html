@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 本番公開時にこの1行を削除（検索エンジンに載せない設定） -->
-<meta name="robots" content="noindex">
 <title>Christmas Collection 2026 | sugar</title>
 <meta name="description" content="sugarのクリスマスケーキ2026。12/19〜25お受け取り、ひとつひとつ手で仕上げたご予約ケーキ全9種。">
 <!-- SNSでシェアされたときの表示（リポジトリ名を変えたらURLも変更） -->
 <meta property="og:title" content="Christmas Collection 2026 | sugar">
-<meta property="og:description" content="sugarのクリスマスケーキ2026。ご予約受付中です。">
+<meta property="og:description" content="sugarのクリスマスケーキ2026。ご予約は11/1(日) 12:00から受付開始です。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sugar-osaka.github.io/christmas2026/">
 <meta property="og:image" content="https://sugar-osaka.github.io/christmas2026/images/og.jpg">
@@ -423,13 +421,14 @@
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">Online</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">オンラインでご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
+        <p class="js-after-open" hidden style="margin: 0; font-size: 14px; color: #4F443A">ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
         <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #143319; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em"><span class="js-reserve-label">オンライン予約ページへ</span><svg class="js-reserve-arrow" aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">In store</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">ご来店でのご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
+        <p class="js-before-open" hidden style="align-self: flex-start; margin: 0; padding: 0 0 4px; border-bottom: 1px solid #8A3A30; color: #8A3A30; font-size: 15px; font-weight: 500; letter-spacing: 0.04em">ご予約開始 11/1(日) 12:00〜</p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A">sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
         <a href="https://sugar-osaka.github.io/sugar/ebie/" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 56px; padding: 0 36px; margin-top: 8px; border: 1px solid #143319; color: #143319; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">店舗情報を見る</a>
       </div>
     </div>
@@ -500,6 +499,8 @@
     const isOpen = function () { return Date.now() >= RESERVE_OPEN_AT; };
     const apply = function () {
       const open = isOpen();
+      document.querySelectorAll(".js-after-open").forEach(function (el) { el.hidden = !open; });  // 受付開始後だけ表示する文章
+      document.querySelectorAll(".js-before-open").forEach(function (el) { el.hidden = open; });  // 受付開始前だけ表示する案内
       btns.forEach(function (a) {
         const label = a.querySelector(".js-reserve-label");
         const arrow = a.querySelector(".js-reserve-arrow");
