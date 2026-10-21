@@ -28,6 +28,7 @@
     body { margin: 0; background: #EDE6DC; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; height: auto; }
   br.sp-br { display: none; }  /* スマホだけ改行 */
+  .js-reserve.is-before-open { background: #DDD3C5 !important; color: #4F443A !important; cursor: default; padding: 0 24px !important; white-space: nowrap; }  /* 受付開始前の予約ボタン */
   a { color: #2E2620; } a:hover { color: #6B5E52; }
   a:focus-visible { outline: 2px solid #8A3A30; outline-offset: 3px; }
   /* 写真スワイプ */
@@ -43,8 +44,8 @@
     .nav-link { display: none; }
     .head-logo-img { height: 46px !important; }
     .footer-logo { width: 100% !important; }
-    .ib { display: inline-block; }
-    br.sp-br { display: inline; }  /* スマホだけ、言葉の区切りで改行する */
+    .ib { display: inline-block; }  /* スマホだけ、言葉の区切りで改行する */
+    br.sp-br { display: inline; }
     .dayof-note { padding: 12px 14px !important; }
   }
   @media (max-width: 374px) {
@@ -151,11 +152,9 @@
       </div>
       <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
         <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-bottom: 10px; border-bottom: 1px solid #CFC3B3"><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 17px; letter-spacing: 0.08em">ご予約期間</span><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 16px; color: #6B5E52">Reservation</span></p>
-        <dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 16px">
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">店頭ご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> —</dd>
-          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">オンラインご予約</dt>
-          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.2 <span style="font-size: 0.6em">Mon</span> —</dd>
+        <dl style="margin: 0; display: grid; grid-template-columns: 1fr; gap: 2px">
+          <dt style="font-size: 13px; color: #4F443A; white-space: nowrap">店頭・オンライン共通</dt>
+          <dd style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.2; white-space: nowrap">11.1 <span style="font-size: 0.6em">Sun</span> <span style="font-size: 0.8em">12:00</span> —</dd>
         </dl>
       </div>
     </div>
@@ -171,10 +170,8 @@
         <p class="swipe-count" hidden></p>
       </div>
       <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">Iced</span> Cookies</h2>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px; letter-spacing: 0.06em; line-height: 1.6">今年の飾りは、<br>sugarオリジナルの<span style="display: inline-block">アイシングクッキー</span></h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A; line-height: 1.9">今年のクリスマスケーキは、sugarオリジナルのアイシングクッキーを飾り付けのメインにしました。サンタクロース、クリスマスツリー、ステッキ、ツリーを運ぶトラックなど、いろいろな絵柄をご用意しました。</p>
-        <p style="margin: 0; font-size: 14px; color: #4F443A; line-height: 1.9">どのクッキーが飾られているかは、お受け取りの日までのお楽しみに。</p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A; line-height: 1.9">今年のクリスマスケーキは、sugarオリジナルのアイシングクッキーを飾り付けのメイン。サンタクロース、クリスマスツリー、ステッキ、ツリーを運ぶトラックなど、いろいろな絵柄をご用意しました。</p>
         <ul style="margin: 0; padding: 0; list-style: none; font-size: 13px; color: #8A3A30; display: flex; flex-direction: column; gap: 2px">
           <li>※ アイシングクッキーの飾りがないケーキもあります</li>
           <li>※ クッキーの絵柄はお選びいただけません</li>
@@ -213,7 +210,7 @@
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #8A3A30">お受け取り 12/23-25 のみ</p>
         <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Fraisier Pistache</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごとピスタチオのフレジエ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">今年のフレジエはリースの形に。ピスタチオとアーモンドの生地で、濃厚なピスタチオクリームと一緒にいちごをたっぷりサンドしています。</p>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">今年のフレジエはリースの形に。生地にもクリームにも、ピスタチオを贅沢に使用し、いちごをたっぷりサンドしています。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,048</dd>
         </dl>
@@ -229,8 +226,8 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Choux Couronne</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シューホール</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">自家製いちごジャムと生クリーム、カスタードクリームがたっぷり入っているリース型のシューに、いちごを飾ってクリスマス仕様に仕上げました。アイシングクッキーとカラフルなメレンゲは別添えでお渡しとなりますので、仕上げのデコレーションも楽しんでいただけると嬉しいです。</p>
+        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Paris-Brest</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シューホール</span></h3>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">自家製いちごジャムとカスタードクリーム、生クリームをたっぷりサンドした、リース型のシュー。アイシングクッキーとカラフルなメレンゲは別添えでお渡しとなりますので、仕上げのデコレーションも楽しんでいただけると嬉しいです。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥3,888</dd>
         </dl>
@@ -264,7 +261,7 @@
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 4号 12/19-25、<span style="color: #8A3A30">5・6号 12/23-25 のみ</span></p>
         <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Tart</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごのタルト</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">タルトの土台にもいちごをたっぷり焼き込み、最後までいちごを堪能していただけるタルトです。</p>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">タルトの土台にもいちごをたっぷり焼き込み、最後までいちごを堪能していただけるタルトです。たっぷりいちごを食べたい方におすすめ。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥5,400</dd>
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,804</dd>
@@ -283,8 +280,8 @@
           <p aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; margin: 0; padding: 2px 10px; background: rgba(46,38,32,0.55); color: #F3EEE6; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.08em" class="swipe-count">1 / 2</p>
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
-        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Shortcake</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごの生クリーム</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">中にも飾りにもいちごがたっぷりの、クリスマスの定番ケーキです。</p>
+        <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Strawberry Cream</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">いちごの生クリーム</span></h3>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">中にもいちごをサンドした、クリスマスの定番ケーキです。今年はsugarオリジナルアイシングクッキーで飾り付けしました。</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥4,860</dd>
           <dt style="color: #6B5E52">5号（約15cm）<span style="margin-left: 8px; font-size: 12px">3-5名様</span></dt><dd style="margin: 0">¥6,048</dd>
@@ -304,7 +301,7 @@
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
         <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Gâteau au Chocolat</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">濃厚ガトーショコラ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">隠れ人気のガトーショコラの、クリスマスver.です。とてもとても濃厚です。</p>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">隠れ人気のグルテンフリーガトーショコラ。生チョコのように濃密で、なめらかな仕上がり。（飾りのクッキーのみ小麦を使用しています）</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
         </dl>
@@ -321,7 +318,7 @@
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
         <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Cheesecake</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">チーズケーキ</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">店頭に通年並ぶチーズケーキとはまた違う食感に仕上げた、濃厚チーズケーキです。</p>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">店頭に通年並ぶチーズケーキとはまた違う食感に仕上げた、グルテンフリーの濃厚チーズケーキです。（飾りのクッキーのみ小麦を使用しています）</p>
         <dl style="margin: 0; padding-top: 10px; border-top: 1px solid #CFC3B3; display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; font-size: 14px">
           <dt style="color: #6B5E52">4号（約12cm）<span style="margin-left: 8px; font-size: 12px">2-3名様</span></dt><dd style="margin: 0">¥3,780</dd>
         </dl>
@@ -340,7 +337,7 @@
         </div>
         <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #6B5E52">お受け取り 12/19-25</p>
         <h3 style="margin: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.2">Chiffon</span><span style="font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 15px">シフォンホール</span></h3>
-        <p style="margin: 0; font-size: 13px; color: #4F443A">デコレーションなしのシフォンに、アイシングクッキーなどの飾り付けオーナメントをセットに。ご自宅で自由に飾って楽しんでください。</p>
+        <p style="margin: 0; font-size: 13px; color: #4F443A">デコレーションなしのシフォンケーキに、アイシングクッキーなどの飾り付けオーナメントをセットに。ご自宅で自由に飾って楽しんでください。</p>
         <ul style="margin: 0; padding: 0; list-style: none; font-size: 13px; color: #8A3A30; display: flex; flex-direction: column; gap: 2px">
           <li>※ 生クリームとフルーツは別途ご用意ください</li>
           <li>※ アイシングクッキーの種類はお選びいただけません</li>
@@ -398,8 +395,8 @@
     <div style="padding: 56px 0; border-top: 1px solid #CFC3B3; border-bottom: 1px solid #CFC3B3; display: flex; justify-content: center">
       <div style="max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
         <h2 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: clamp(19px, 2vw, 22px); letter-spacing: 0.06em"><span class="ib">12/23〜25は、</span><span class="ib">当日販売限定のケーキも。</span></h2>
-        <p style="margin: 0; font-size: 14px; color: #4F443A"><span class="ib">この3日間は、</span><span class="ib">ブッシュドノエルの形をした</span><span class="ib">当日販売限定のホールケーキや、</span><span class="ib">カットケーキも店頭に並びます。</span><br class="sp-br"><span class="ib">ご予約なしでお買い求めいただけます。</span></p>
-        <p class="dayof-note" style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30"><span class="ib">数に限りがあり、</span><span class="ib">売り切れ次第</span><span class="ib">販売終了となります。</span><span class="ib">確実にお求めになりたい方は、</span><span class="ib">ご予約ケーキを</span><span class="ib">ご利用ください。</span></p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A"><span class="ib">この3日間は、</span><span class="ib">ブッシュドノエルの形をした</span><span class="ib">当日販売限定のホールケーキや、</span><span class="ib">クリスマス仕様の</span><span class="ib">カットケーキも店頭に並びます。</span><br class="sp-br"><span class="ib">ご予約なしでお買い求めいただけます。</span></p>
+        <p class="dayof-note" style="margin: 4px 0 0; padding: 12px 20px; border: 1px solid #8A3A30; font-size: 14px; color: #8A3A30"><span class="ib">数に限りがあり、</span><span class="ib">売り切れ次第</span><span class="ib">販売終了となります。</span><br><span class="ib">確実にお求めになりたい方は、</span><span class="ib">ご予約ケーキを</span><span class="ib">ご利用ください。</span><br><span class="ib">当日販売限定のケーキの</span><span class="ib">お取り置きはできません。</span></p>
       </div>
     </div>
   </section>
@@ -414,13 +411,13 @@
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">Online</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">オンラインでご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/2(月)〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
-        <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #143319; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">オンライン予約ページへ<svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。ケーキ・お受け取り日・時間を選んでお申し込みください。ご予約確定メールに記載の「ご予約番号（ご予約ID）」をお受け取り時に確認が必要になりますので、必ずメールを保管いただきますようお願いいたします。</p>
+        <a class="js-reserve" href="#reserve" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 36px; margin-top: 8px; background: #143319; color: #F3EEE6; text-decoration: none; font-size: 14px; letter-spacing: 0.12em"><span class="js-reserve-label">オンライン予約ページへ</span><svg class="js-reserve-arrow" aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="#F3EEE6" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">In store</p>
         <h3 style="margin: 0; font-family: 'Shippori Mincho', serif; font-weight: 500; font-size: 20px">ご来店でのご予約</h3>
-        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日)〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
+        <p style="margin: 0; font-size: 14px; color: #4F443A">受付開始 11/1(日) 12:00〜。sugar ebie 店でのみ承ります（sagisu 本店では受付しておりません）。ご予約ケーキはすべて事前決済です。お電話でのご予約はお受け付け不可となります。また、混雑時は、ご予約の受付まで店頭でお並びいただく場合があります。あらかじめご了承ください。</p>
         <a href="https://sugar-osaka.github.io/sugar/ebie/" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 56px; padding: 0 36px; margin-top: 8px; border: 1px solid #143319; color: #143319; text-decoration: none; font-size: 14px; letter-spacing: 0.12em">店舗情報を見る</a>
       </div>
     </div>
@@ -521,6 +518,42 @@
   const MAP_URL       = "https://maps.google.com/?q=大阪府大阪市福島区海老江5-3-10"; // Googleマップ
 
   document.querySelectorAll(".js-reserve").forEach(a => a.href = RESERVE_URL);
+
+  /* オンライン予約の受付開始（日本時間）。この時刻までは予約ボタンを押せないようにする */
+  const RESERVE_OPEN_AT = Date.parse("2026-11-01T12:00:00+09:00");
+  (function () {
+    const btns = document.querySelectorAll(".js-reserve");
+    const isOpen = function () { return Date.now() >= RESERVE_OPEN_AT; };
+    const apply = function () {
+      const open = isOpen();
+      btns.forEach(function (a) {
+        const label = a.querySelector(".js-reserve-label");
+        const arrow = a.querySelector(".js-reserve-arrow");
+        if (open) {
+          a.href = RESERVE_URL; a.setAttribute("target", "_blank");
+          a.removeAttribute("aria-disabled"); a.classList.remove("is-before-open");
+          if (label) label.textContent = "オンライン予約ページへ";
+          if (arrow) arrow.style.display = "";
+        } else {
+          a.removeAttribute("href"); a.removeAttribute("target");
+          a.setAttribute("aria-disabled", "true"); a.classList.add("is-before-open");
+          if (label) label.textContent = "11/1(日) 12:00 受付開始";
+          if (arrow) arrow.style.display = "none";
+        }
+      });
+      return open;
+    };
+    btns.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (!isOpen()) { e.preventDefault(); e.stopImmediatePropagation(); }
+      });
+    });
+    if (!apply()) {
+      const wait = RESERVE_OPEN_AT - Date.now();
+      if (wait < 2147483647) setTimeout(apply, wait + 500);       // ページを開いたまま12時を迎えたら自動で切り替え
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) apply(); });
+    }
+  })();
   document.querySelectorAll(".js-instagram").forEach(a => a.href = INSTAGRAM_URL);
   document.querySelectorAll(".js-base").forEach(a => { if (BASE_URL) a.href = BASE_URL; else { a.href = "#online"; a.removeAttribute("target"); } });
   document.querySelectorAll(".js-map").forEach(a => a.href = MAP_URL);
