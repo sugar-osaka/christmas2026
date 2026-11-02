@@ -99,6 +99,10 @@
 <style id="confirm-modal">
   /* 注意事項の確認ポップアップ */
   .cm { width: min(720px, calc(100% - 32px)); max-height: min(86vh, 900px); padding: 0; border: 0; background: #F3EEE6; color: #2E2620; box-shadow: 0 30px 80px -30px rgba(0,0,0,.55); overflow: hidden; font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif; line-height: 1.8; letter-spacing: 0.02em; }
+  .av { width: min(760px, calc(100% - 24px)); }
+  .av-body { padding: 16px 20px 18px; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 10px; }
+  .av-img { display: block; width: 100%; height: auto; background: #EDE6DC; }
+  .av-zoom { align-self: flex-end; font-size: 13px; color: #4F443A; }
   .cm[open] { display: flex; flex-direction: column; animation: cm-in .35s cubic-bezier(.2,.7,.2,1); }
   .cm::backdrop { background: rgba(46,38,32,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
   @keyframes cm-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -425,6 +429,10 @@
       <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: clamp(40px, 5vw, 64px); line-height: 1"><span style="font-style: italic">How to</span> Reserve</h2>
       <p style="margin: 0; font-size: 13px; color: #6B5E52; letter-spacing: 0.1em">ご予約方法</p>
     </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: -16px 0 48px">
+      <button type="button" class="js-avail-open" style="display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 28px; border: 1px solid #143319; background: transparent; color: #143319; font-family: inherit; font-size: 14px; letter-spacing: 0.12em; cursor: pointer">時間帯ごとの受付状況を見る<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.5" y="2.5" width="13" height="11"/><path d="M1.5 6h13M6 6v7.5M10 6v7.5"/></svg></button>
+      <span style="font-size: 13px; color: #6B5E52">ケーキ・お受け取り時間ごとの受付状況を確認できます。</span>
+    </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 48px 64px">
       <div style="display: flex; flex-direction: column; gap: 12px">
         <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; color: #8A3A30">Online</p>
@@ -668,6 +676,35 @@
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
     items.forEach(el => io.observe(el));
     addEventListener("scroll", () => { if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) items.forEach(el => el.classList.add("in")); }, { passive: true });
+  })();
+</script>
+<!-- 時間帯ごとの受付状況（画像は images/availability.png を上書きするだけで更新されます） -->
+<dialog class="cm av" id="avail-dialog" aria-labelledby="av-title">
+  <div class="cm-head">
+    <h2 id="av-title">時間帯ごとの受付状況</h2>
+    <button type="button" class="cm-close js-avail-close" aria-label="閉じる">×</button>
+  </div>
+  <div class="av-body">
+    <img class="av-img" alt="ケーキ・お受け取り時間ごとの受付状況（◯ ご予約受付中、△ 残りわずか、完売 ご予約受付終了）" width="1294" height="1513">
+    <a class="av-zoom" target="_blank" rel="noopener">画像を別のタブで大きく表示する</a>
+  </div>
+</dialog>
+<script>
+  /* 時間帯ごとの受付状況のポップアップ（ダイアログの後ろで実行） */
+  (function () {
+    const dlg = document.getElementById("avail-dialog");
+    if (!dlg) return;
+    const img = dlg.querySelector(".av-img"), zoom = dlg.querySelector(".av-zoom");
+    const SRC = "images/availability.png";
+    document.querySelectorAll(".js-avail-open").forEach(function (b) {
+      b.addEventListener("click", function () {
+        const url = SRC + "?t=" + Date.now();   // 毎回最新の画像を読み込む（古い画像が残らないように）
+        img.src = url; zoom.href = url;
+        if (typeof dlg.showModal === "function") dlg.showModal(); else window.open(url, "_blank");
+      });
+    });
+    dlg.querySelector(".js-avail-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });   // 背景を押すと閉じる
   })();
 </script>
 <dialog class="cm" id="confirm-modal-dialog" aria-labelledby="cm-title">
