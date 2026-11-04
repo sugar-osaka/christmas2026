@@ -117,6 +117,9 @@
   .cm-foot { padding: 16px 28px 22px; border-top: 1px solid #CFC3B3; display: flex; flex-direction: column; gap: 14px; background: #F3EEE6; }
   .cm-check { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; min-height: 44px; }
   .cm-check input { width: 20px; height: 20px; accent-color: #143319; margin: 0; }
+  .cm-check.is-locked { color: #8C7F72; cursor: not-allowed; }
+  .cm-hint { margin: 0 0 -8px; font-size: 12px; color: #8A3A30; }
+  .cm-hint[hidden] { display: none; }
   .cm-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
   .cm-actions button { min-height: 52px; padding: 0 28px; font: inherit; font-size: 14px; letter-spacing: 0.1em; cursor: pointer; border: 1px solid #143319; }
   .cm-cancel { background: transparent; color: #143319; }
@@ -729,7 +732,8 @@
   </div>
   <div class="cm-body"></div>
   <div class="cm-foot">
-    <label class="cm-check"><input type="checkbox"> 注意事項を確認しました</label>
+    <p class="cm-hint">最後までスクロールするとチェックできます</p>
+    <label class="cm-check"><input type="checkbox" disabled> 注意事項を確認しました</label>
     <div class="cm-actions">
       <button type="button" class="cm-cancel">戻る</button>
       <button type="button" class="cm-go" disabled><span>進む</span><svg aria-hidden="true" width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h21M17 1l4 4-4 4"/></svg></button>
@@ -745,6 +749,22 @@
     const check = dlg.querySelector(".cm-check input");
     const go = dlg.querySelector(".cm-go");
     const goLabel = go.querySelector("span");
+    const label = dlg.querySelector(".cm-check");
+    const hint = dlg.querySelector(".cm-hint");
+    /* 注意事項を最後までスクロールしたら、チェックできるようにする */
+    const unlock = function () {
+      check.disabled = false; label.classList.remove("is-locked"); hint.hidden = true;
+    };
+    const lock = function () {
+      check.checked = false; check.disabled = true; go.disabled = true;
+      label.classList.add("is-locked"); hint.hidden = false;
+    };
+    const checkScroll = function () {
+      if (!check.disabled) return;
+      if (body.scrollTop + body.clientHeight >= body.scrollHeight - 8) unlock();   // 一番下まで来た（スクロールが不要な画面ではすぐ解除）
+    };
+    body.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", function () { if (dlg.open) checkScroll(); });
     /* 「ご予約前にご確認ください」の3項目をそのまま複製して表示 */
     document.querySelectorAll("#notes div[style*='flex-direction: column; gap: 14px']").forEach(function (col) {
       const c = col.cloneNode(true);
@@ -768,9 +788,10 @@
         e.preventDefault();
         target = t.el;
         goLabel.textContent = t.label;
-        check.checked = false; go.disabled = true;
+        lock();
         body.scrollTop = 0;
         dlg.showModal();
+        requestAnimationFrame(checkScroll);
       });
     });
     check.addEventListener("change", function () { go.disabled = !check.checked; });
